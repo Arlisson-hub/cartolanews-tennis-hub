@@ -100,6 +100,31 @@ final class CN_Tennis_Calendar {
         return preg_match('/^\d{4}-\d{2}-\d{2}$/', $value) ? $value : null;
     }
 
+    /**
+     * @return array{today:bool,week:bool,month:bool}
+     */
+    public static function period_flags(?string $starts, ?string $ends, ?string $today = null): array {
+        $starts = self::valid_date($starts);
+        $ends = self::valid_date($ends);
+        $today = self::valid_date($today) ?: current_time('Y-m-d');
+        if (!$starts) {
+            return ['today' => false, 'week' => false, 'month' => false];
+        }
+
+        // Mesma janela máxima usada para o status quando a fonte não informa
+        // término. É apenas uma regra de exibição; a data não é salva.
+        $effective_end = $ends ?: gmdate('Y-m-d', strtotime($starts . ' +14 days'));
+        $week_end = gmdate('Y-m-d', strtotime($today . ' +7 days'));
+        $month_start = gmdate('Y-m-01', strtotime($today));
+        $month_end = gmdate('Y-m-t', strtotime($today));
+
+        return [
+            'today' => $starts <= $today && $effective_end >= $today,
+            'week' => $starts <= $week_end && $effective_end >= $today,
+            'month' => $starts <= $month_end && $effective_end >= $month_start,
+        ];
+    }
+
     private static function unique_slug(string $name): string {
         global $wpdb;
         $table = self::table();
@@ -122,8 +147,9 @@ final class CN_Tennis_Calendar {
         $params = [];
 
         if (!empty($args['from'])) {
-            $where[] = '(ends_at IS NULL OR ends_at >= %s)';
+            $where[] = '(ends_at >= %s OR (ends_at IS NULL AND starts_at >= %s))';
             $params[] = $args['from'];
+            $params[] = gmdate('Y-m-d', strtotime((string) $args['from'] . ' -14 days'));
         }
         if (!empty($args['to'])) {
             $where[] = 'starts_at <= %s';

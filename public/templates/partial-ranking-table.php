@@ -71,7 +71,7 @@ $updated_label = $last_update ? CN_Tennis_Helpers::time_ago($last_update) : 'sem
             </table>
         </div>
         <?php if (count($rows) > $default_top): ?>
-            <button type="button" class="cnt-ranking-toggle" data-cnt-ranking-toggle aria-expanded="false">Ver ranking completo</button>
+            <button type="button" class="cnt-ranking-toggle" data-cnt-ranking-toggle aria-expanded="false">Ver mais</button>
         <?php endif; ?>
     <?php endif; ?>
 </div>

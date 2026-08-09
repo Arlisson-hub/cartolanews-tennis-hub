@@ -3,7 +3,7 @@
  * Plugin Name: CartolaNews Tennis Hub
  * Plugin URI: https://cartolanews.com.br/
  * Description: Central completa de Tênis do CartolaNews — ranking mundial, jogos, ao vivo, calendário, lendas, superfícies e perfis de jogadores, com sincronização automática por providers plugáveis.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Requires at least: 6.4
  * Requires PHP: 8.1
  * Author: CartolaNews
@@ -15,7 +15,7 @@
 
 defined('ABSPATH') || exit;
 
-define('CN_TENNIS_VERSION', '1.0.0');
+define('CN_TENNIS_VERSION', '1.1.0');
 define('CN_TENNIS_DB_VERSION', '1.0.0');
 define('CN_TENNIS_FILE', __FILE__);
 define('CN_TENNIS_PATH', plugin_dir_path(__FILE__));

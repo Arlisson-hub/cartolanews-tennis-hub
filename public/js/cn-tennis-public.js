@@ -80,7 +80,7 @@
     }
 
     // ---------------------------------------------------------------
-    // Ranking: seletor Top 10/20/50/100 + botão "Ver ranking completo".
+    // Ranking: seletor Top 10/20/50/100 + botão progressivo "Ver mais".
     // ---------------------------------------------------------------
     function initRankingControls() {
         document.querySelectorAll('[data-cnt-ranking-panel]').forEach((panel) => {
@@ -89,37 +89,39 @@
             const toggle = panel.querySelector('[data-cnt-ranking-toggle]');
 
             const applyLimit = (limit) => {
+                const total = rows().length;
                 rows().forEach((row) => {
                     row.hidden = parseInt(row.getAttribute('data-index'), 10) >= limit;
                 });
                 panel.setAttribute('data-cnt-ranking-visible', String(limit));
+                if (toggle) {
+                    const fullyExpanded = limit >= total;
+                    toggle.textContent = fullyExpanded ? 'Ver menos' : 'Ver mais';
+                    toggle.setAttribute('aria-expanded', String(fullyExpanded));
+                }
             };
 
             if (select) {
                 select.addEventListener('change', () => {
                     applyLimit(parseInt(select.value, 10) || 20);
-                    if (toggle) {
-                        toggle.setAttribute('aria-expanded', String(parseInt(select.value, 10) >= 100));
-                    }
                 });
             }
 
             if (toggle) {
                 toggle.addEventListener('click', () => {
-                    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-                    if (expanded) {
+                    const total = rows().length;
+                    const current = parseInt(panel.getAttribute('data-cnt-ranking-visible'), 10) || 20;
+                    if (current >= total) {
                         const fallback = select ? parseInt(select.value, 10) || 20 : 20;
                         applyLimit(fallback);
-                        toggle.textContent = 'Ver ranking completo';
-                        toggle.setAttribute('aria-expanded', 'false');
                     } else {
-                        applyLimit(100);
-                        if (select) select.value = '100';
-                        toggle.textContent = 'Ver menos';
-                        toggle.setAttribute('aria-expanded', 'true');
+                        const next = current < 20 ? 20 : (current < 50 ? 50 : 100);
+                        applyLimit(Math.min(next, total));
                     }
                 });
             }
+
+            applyLimit(parseInt(panel.getAttribute('data-cnt-ranking-visible'), 10) || 20);
         });
     }
 

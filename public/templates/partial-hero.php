@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 ?>
-<header class="cnt-hero">
+<header class="cnt-hero" style="--cnt-hero-image:url('<?php echo esc_url(CN_TENNIS_URL . 'public/images/tennis-hub-hero.webp'); ?>')">
     <div class="cnt-hero__bg" aria-hidden="true"></div>
     <div class="cnt-hero__content">
         <p class="cnt-hero__kicker">CENTRAL DE TÊNIS</p>

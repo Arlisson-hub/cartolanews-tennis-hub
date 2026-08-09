@@ -53,6 +53,7 @@
 .cnt > .cnt-summary,
 .cnt-hub > section,
 .cnt-hub > .cnt-summary,
+.cnt-hub > .cnt-surface-filter,
 .cnt-hub > .cnt-power-ranking-grid,
 .cnt-hero__content {
     width: min(calc(100% - 32px), 1240px);
@@ -156,18 +157,21 @@ img.cn-tennis-image { aspect-ratio: auto; border-radius: inherit; }
 }
 .cnt-hero__bg {
     position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 85% 20%, rgba(255,255,255,.12), transparent 45%),
-                       radial-gradient(circle at 10% 90%, rgba(255,255,255,.08), transparent 40%);
+    background-image: linear-gradient(90deg, rgba(3, 17, 43, .88) 0%, rgba(3, 17, 43, .58) 35%, rgba(3, 17, 43, .08) 72%),
+                       var(--cnt-hero-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     pointer-events: none;
 }
-.cnt-hero__content { position: relative; z-index: 1; text-align: center; }
+.cnt-hero__content { position: relative; z-index: 1; text-align: left; }
 .cnt-hero__kicker {
     text-transform: uppercase; letter-spacing: .18em; font-size: .75rem;
     color: var(--cnt-accent-2); font-weight: 700; margin-bottom: 10px;
 }
 .cnt-hero__title { color: var(--cnt-white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
-.cnt-hero__subtitle { color: rgba(255,255,255,.85); font-size: clamp(1rem, 2vw, 1.15rem); max-width: 640px; margin: 0 auto 28px; }
-.cnt-hero__nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.cnt-hero__subtitle { color: rgba(255,255,255,.85); font-size: clamp(1rem, 2vw, 1.15rem); max-width: 640px; margin: 0 0 28px; }
+.cnt-hero__nav { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; }
 .cnt-hero__nav a {
     color: var(--cnt-white);
     background: rgba(255,255,255,.12);
@@ -209,7 +213,7 @@ img.cn-tennis-image { aspect-ratio: auto; border-radius: inherit; }
  * Tabs / filtros reutilizáveis (superfície, jogos, calendário)
  * ------------------------------------------------------------------ */
 .cnt-surface-filter, .cnt-tabs {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 16px;
 }
 .cnt-surface-filter button, .cnt-tabs button {
     border: 1px solid var(--cnt-border);
@@ -221,6 +225,9 @@ img.cn-tennis-image { aspect-ratio: auto; border-radius: inherit; }
     font-size: .85rem;
     cursor: pointer;
     transition: background .15s ease, color .15s ease, border-color .15s ease;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
 }
 .cnt-surface-filter button[aria-selected="true"], .cnt-tabs button[aria-selected="true"] {
     background: var(--cnt-primary);
@@ -383,8 +390,8 @@ img.cn-tennis-image { aspect-ratio: auto; border-radius: inherit; }
 
 /* =======================================================================
  * DARK MODE
- * Segue as classes usadas pelo tema Foxiz + atributo padrão do WordPress,
- * com fallback por prefers-color-scheme quando nenhuma classe está presente.
+ * Segue a escolha explícita do tema Foxiz/WordPress. Não usa a preferência
+ * do sistema quando o visitante escolheu o modo claro no site.
  * ===================================================================== */
 [data-theme="dark"] .cnt,
 body.dark .cnt,
@@ -393,6 +400,7 @@ body.elementor-dark-mode .cnt,
 body.cn-dark .cnt,
 body.nightmode .cnt {
     color-scheme: dark;
+    --cnt-ink: #f3f4f6;
     --cnt-bg: #14161c;
     --cnt-surface: #1c1f27;
     --cnt-surface-2: #23262f;
@@ -403,24 +411,14 @@ body.nightmode .cnt {
     --cnt-neutral: #2a2d36;
 }
 
-@media (prefers-color-scheme: dark) {
-    .cnt:not([data-cnt-force-light]) {
-        color-scheme: dark;
-        --cnt-bg: #14161c;
-        --cnt-surface: #1c1f27;
-        --cnt-surface-2: #23262f;
-        --cnt-text: #e9e9ea;
-        --cnt-muted: #a3a8b4;
-        --cnt-border: #30333d;
-        --cnt-shadow: 0 10px 28px rgba(0,0,0,.35);
-        --cnt-neutral: #2a2d36;
-    }
-}
-
 [data-theme="dark"] .cnt h1,
 [data-theme="dark"] .cnt h2,
 [data-theme="dark"] .cnt h3,
-body.dark .cnt h1, body.dark .cnt h2, body.dark .cnt h3 { color: var(--cnt-text); }
+body.dark .cnt h1, body.dark .cnt h2, body.dark .cnt h3,
+body.dark-mode .cnt h1, body.dark-mode .cnt h2, body.dark-mode .cnt h3,
+body.elementor-dark-mode .cnt h1, body.elementor-dark-mode .cnt h2, body.elementor-dark-mode .cnt h3,
+body.cn-dark .cnt h1, body.cn-dark .cnt h2, body.cn-dark .cnt h3,
+body.nightmode .cnt h1, body.nightmode .cnt h2, body.nightmode .cnt h3 { color: var(--cnt-text); }
 
 /* =======================================================================
  * RESPONSIVE

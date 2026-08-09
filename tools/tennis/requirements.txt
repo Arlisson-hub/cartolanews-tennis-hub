@@ -2,3 +2,4 @@
 # Toda a coleta HTTP usa urllib (biblioteca padrão), sem "requests" — menos
 # superfície de dependência para manter no GitHub Actions.
 pyyaml>=6.0
+pypdf>=5.0,<7

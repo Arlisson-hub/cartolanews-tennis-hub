@@ -38,19 +38,15 @@ defined('ABSPATH') || exit;
                 <tbody>
                     <?php foreach ($rows as $t):
                         $today = current_time('Y-m-d');
-                        $is_today = $t['starts_at'] === $today || ($t['starts_at'] <= $today && (!$t['ends_at'] || $t['ends_at'] >= $today));
-                        $week_end = gmdate('Y-m-d', strtotime($today . ' +7 days'));
-                        $month_end = gmdate('Y-m-d', strtotime($today . ' +30 days'));
-                        $in_week = $t['starts_at'] && $t['starts_at'] <= $week_end && (!$t['ends_at'] || $t['ends_at'] >= $today);
-                        $in_month = $t['starts_at'] && $t['starts_at'] <= $month_end && (!$t['ends_at'] || $t['ends_at'] >= $today);
+                        $period = CN_Tennis_Calendar::period_flags($t['starts_at'] ?? null, $t['ends_at'] ?? null, $today);
                         $is_brazil = strtoupper((string) $t['country_code']) === 'BRA' || strcasecmp((string) $t['country'], 'Brasil') === 0 || strcasecmp((string) $t['country'], 'Brazil') === 0;
                     ?>
                     <tr data-cnt-cal-row
                         data-tour="<?php echo esc_attr($t['tour']); ?>"
                         data-category="<?php echo esc_attr($t['category'] ?: ''); ?>"
-                        data-today="<?php echo $is_today ? '1' : '0'; ?>"
-                        data-week="<?php echo $in_week ? '1' : '0'; ?>"
-                        data-month="<?php echo $in_month ? '1' : '0'; ?>"
+                        data-today="<?php echo $period['today'] ? '1' : '0'; ?>"
+                        data-week="<?php echo $period['week'] ? '1' : '0'; ?>"
+                        data-month="<?php echo $period['month'] ? '1' : '0'; ?>"
                         data-brasil="<?php echo $is_brazil ? '1' : '0'; ?>">
                         <td data-label="Torneio"><strong><?php echo esc_html($t['name']); ?></strong></td>
                         <td data-label="Cidade/País"><?php echo esc_html(trim(($t['city'] ? $t['city'] . ', ' : '') . $t['country'])); ?></td>

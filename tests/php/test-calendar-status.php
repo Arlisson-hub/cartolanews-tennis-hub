@@ -71,3 +71,23 @@ test('edicao manual bloqueada vence o feed automatico equivalente', function () 
     assert_equal(1, count($deduplicated));
     assert_equal(11, (int) $deduplicated[0]['id']);
 });
+
+test('filtros de data não tratam torneio antigo sem final como atual', function () {
+    $flags = CN_Tennis_Calendar::period_flags('2026-01-05', null, '2026-08-09');
+    assert_equal(['today' => false, 'week' => false, 'month' => false], $flags);
+});
+
+test('filtros hoje semana e mês usam janelas corretas', function () {
+    assert_equal(
+        ['today' => true, 'week' => true, 'month' => true],
+        CN_Tennis_Calendar::period_flags('2026-08-09', null, '2026-08-09')
+    );
+    assert_equal(
+        ['today' => false, 'week' => true, 'month' => true],
+        CN_Tennis_Calendar::period_flags('2026-08-15', null, '2026-08-09')
+    );
+    assert_equal(
+        ['today' => false, 'week' => false, 'month' => true],
+        CN_Tennis_Calendar::period_flags('2026-08-25', null, '2026-08-09')
+    );
+});

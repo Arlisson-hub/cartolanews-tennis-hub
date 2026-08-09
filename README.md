@@ -22,7 +22,7 @@ Detalhes completos em [docs/INSTALL.md](docs/INSTALL.md).
 
 | Dado | Automático? | Fonte |
 |---|---|---|
-| Ranking mundial ATP/WTA | Sim | Feed JSON (GitHub Actions → coletor Python) |
+| Ranking mundial ATP/WTA | Sim | ATP: relatório numérico oficial Top 100; WTA: página oficial Top 50 (GitHub Actions → coletor Python) |
 | Calendário de torneios | Sim | Feed JSON (GitHub Actions → coletor Python) |
 | Jogos do dia / Ao vivo | Sim | TheSportsDB, consultado diretamente pelo cron do plugin |
 | Power Ranking ("Melhores do Momento") | Sim | Calculado no WordPress a partir das partidas já salvas |

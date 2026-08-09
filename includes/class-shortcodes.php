@@ -218,7 +218,7 @@ final class CN_Tennis_Shortcodes {
     // ------------------------------------------------------------------
     public function calendar($atts = []): string {
         $a = shortcode_atts(['limite' => 60, 'titulo' => 'sim'], $atts, 'cn_tenis_calendario');
-        $rows = CN_Tennis_Calendar::query(['from' => gmdate('Y-m-d', time() - 7 * DAY_IN_SECONDS), 'limit' => (int) $a['limite']]);
+        $rows = CN_Tennis_Calendar::query(['from' => current_time('Y-m-01'), 'limit' => (int) $a['limite']]);
         ob_start();
         include CN_TENNIS_PATH . 'public/templates/partial-calendar.php';
         return $this->wrap((string) ob_get_clean(), 'cnt--widget');

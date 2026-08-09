@@ -24,14 +24,14 @@ Este documento registra, para cada fonte avaliada, o que foi **testado manualmen
 - **Licença:** dados factuais de ranking (posição/pontos) publicados pela própria entidade organizadora do esporte.
 - **Frequência:** diária.
 
-### ATP — Wikipédia (ranking masculino oficial, cobertura parcial)
+### ATP — relatório numérico oficial (Top 100)
 
-- **URL:** `https://en.wikipedia.org/wiki/ATP_rankings`
+- **URL:** `https://www.protennislive.com/posting/ramr/singles_entry_numerical.pdf`
 - **Uso no plugin:** ranking mundial masculino (`tools/tennis/providers/atp.py`).
-- **Por que não é o site oficial da ATP:** `atptour.com` está atrás de um desafio anti-bot da Cloudflare — testado manualmente e confirmado: uma requisição com User-Agent identificado recebe HTTP 403 com a página "Just a moment...". **O projeto proíbe explicitamente contornar Cloudflare/CAPTCHA ou se passar por navegador para burlar essa proteção (seção 20), então este provider nunca acessa atptour.com.**
-- **O que é extraído:** a tabela **"ATP rankings (singles)"** da Wikipédia — é o ranking oficial real (não confundir com a tabela vizinha "Singles race rankings", que é outra métrica/pontuação; o parser exige a coluna "Move" para pegar a tabela certa e evitar essa confusão).
-- **Limitação conhecida:** a Wikipédia só mantém as **20 primeiras posições** atualizadas para o ranking oficial (ao contrário do wtatennis.com, que dá Top 50 real). Posições além do Top 20 exigem cadastro manual ou uma fonte paga.
-- **Licença:** CC BY-SA — conteúdo da Wikipédia é reutilizável comercialmente com atribuição e compartilhamento pela mesma licença. Atribuição já incluída automaticamente no campo `source`/`source_url` de cada snapshot e exibida no rodapé da tabela de ranking no site.
+- **Origem oficial:** o PDF é vinculado pela própria página ATP Tour → Media → Rankings & Info Reports como “Singles PIF ATP Rankings Numerical” e hospedado no domínio operacional ProTennisLive.
+- **O que é extraído:** posição, nome, país (quando publicado) e pontos das primeiras 100 posições. O relatório completo contém mais de mil jogadores.
+- **Acesso responsável:** o HTML de `atptour.com` continua retornando Cloudflare 403 para o coletor e não é contornado; somente o relatório PDF público é baixado, uma vez ao dia, com User-Agent identificado, timeout e retry.
+- **Validação:** o snapshot anterior é preservado se o PDF não puder ser lido ou se menos de 50 linhas válidas forem extraídas.
 - **Frequência:** diária.
 
 ### Calendário ATP/WTA — Wikipédia (temporada do ano)
@@ -56,7 +56,7 @@ Não foi necessário usar raspagem fora das páginas públicas da Wikipédia/wta
 
 | Fonte | Motivo do descarte |
 |---|---|
-| **atptour.com** (site oficial ATP) | Bloqueado por desafio anti-bot da Cloudflare (HTTP 403 confirmado por teste manual). O projeto proíbe contornar Cloudflare/CAPTCHA — não usamos técnicas de disfarce de navegador para burlar essa proteção. |
+| **HTML de atptour.com** | Bloqueado por desafio anti-bot da Cloudflare (HTTP 403 confirmado). Não é contornado; usamos apenas o relatório PDF oficial que a própria ATP disponibiliza no ProTennisLive. |
 | **Jeff Sackmann `tennis_atp`/`tennis_wta`** (dataset GitHub muito usado em análises de tênis) | Licenciado como **CC BY-NC-SA 4.0** — uso **não comercial apenas**. O CartolaNews é um portal com publicidade/monetização, então essa base foi descartada mesmo sendo tecnicamente excelente (seção 46: não usar base marcada como exclusivamente não comercial em projeto com fins comerciais). |
 | **API-Sports / Sportradar / RapidAPI (tennis)** | APIs pagas. Não contratadas automaticamente (seção 20) — a arquitetura de providers permite plugá-las no futuro sem alterar o restante do plugin, caso o CartolaNews decida assinar uma. |
 | **Google Imagens** | Explicitamente proibido pelo briefing (seção 29) — nunca usado. |

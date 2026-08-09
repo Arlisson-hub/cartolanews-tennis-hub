@@ -10,24 +10,21 @@
 schema_version: 1
 
 rankings:
-  # IMPORTANTE (ver docs/DATA-SOURCES.md): atptour.com está atrás de um
-  # desafio anti-bot da Cloudflare e não é acessado por este projeto (regra
-  # explícita: nunca contornar Cloudflare/CAPTCHA). Usamos a tabela "ATP
-  # rankings (singles)" da Wikipédia — é o ranking oficial real (não a
-  # tabela vizinha de "Race Rankings", que é outra métrica), mas a
-  # Wikipédia só mantém as 20 primeiras posições atualizadas.
+  # O HTML de atptour.com segue protegido por Cloudflare e não é contornado.
+  # A página ATP "Rankings & Info Reports" aponta para o relatório numérico
+  # oficial abaixo, hospedado no ProTennisLive e acessível como PDF.
   male:
     enabled: true
-    provider: wikipedia_atp
+    provider: atp_official_report
     fallback: none
-    url: "https://en.wikipedia.org/wiki/ATP_rankings"
-    parser: wikipedia_ranking_table
-    min_rows: 15
+    url: "https://www.protennislive.com/posting/ramr/singles_entry_numerical.pdf"
+    parser: atp_numerical_pdf
+    min_rows: 50
     frequency: daily
     timeout_seconds: 25
     retries: 3
     priority: 1
-    caveat: "Cobertura limitada ao Top 20 (a Wikipédia não mantém Top 100 do ranking oficial)"
+    coverage: "Top 100 no snapshot; relatório oficial contém ranking completo"
 
   # wtatennis.com é o site OFICIAL da WTA. robots.txt totalmente aberto,
   # HTML renderizado no servidor (sem JavaScript necessário), responde

@@ -30,9 +30,8 @@ class FetchError(RuntimeError):
     """Erro definitivo depois de esgotar as tentativas configuradas."""
 
 
-def fetch_text(url: str, *, timeout: int = 25, retries: int = 3, headers: dict[str, str] | None = None) -> str:
-    """GET com backoff exponencial (0.5s, 1s, 2s, ...). Nunca levanta na
-    primeira falha — só depois de esgotar `retries` tentativas."""
+def fetch_bytes(url: str, *, timeout: int = 25, retries: int = 3, headers: dict[str, str] | None = None) -> bytes:
+    """GET binário com backoff exponencial (0.5s, 1s, 2s, ...)."""
     last_error: Exception | None = None
     request_headers = {"User-Agent": USER_AGENT, "Accept": "text/html,application/json"}
     request_headers.update(headers or {})
@@ -43,13 +42,18 @@ def fetch_text(url: str, *, timeout: int = 25, retries: int = 3, headers: dict[s
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 if response.status >= 400:
                     raise FetchError(f"HTTP {response.status} em {url}")
-                return response.read().decode("utf-8", errors="replace")
+                return response.read()
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, FetchError) as error:
             last_error = error
             if attempt < retries:
                 time.sleep(0.5 * (2 ** (attempt - 1)))
 
     raise FetchError(f"Falha ao buscar {url} após {retries} tentativa(s): {last_error}")
+
+
+def fetch_text(url: str, *, timeout: int = 25, retries: int = 3, headers: dict[str, str] | None = None) -> str:
+    """GET textual identificado, com retry e decodificação tolerante."""
+    return fetch_bytes(url, timeout=timeout, retries=retries, headers=headers).decode("utf-8", errors="replace")
 
 
 def fetch_json(url: str, *, timeout: int = 25, retries: int = 3) -> Any:
