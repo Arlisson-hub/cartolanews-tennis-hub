@@ -1,0 +1,461 @@
+/*
+ * CartolaNews Tennis Hub — estilos públicos.
+ * Escopo: tudo vive dentro de .cnt (raiz gerada pelo wrap() dos shortcodes),
+ * para nunca vazar estilo para o resto do tema Foxiz.
+ * Largura editorial: .cnt-tennis-container = min(calc(100% - 32px), 1240px).
+ */
+
+.cnt {
+    --cnt-primary: #144b9b;
+    --cnt-primary-dark: #0f3a79;
+    --cnt-accent: #7494c4;
+    --cnt-accent-2: #849cc4;
+    --cnt-neutral: #e9e9ea;
+    --cnt-ink: #2b2b24;
+    --cnt-white: #ffffff;
+
+    --cnt-bg: #f4f5f7;
+    --cnt-surface: #ffffff;
+    --cnt-surface-2: #f7f8fa;
+    --cnt-text: var(--cnt-ink);
+    --cnt-muted: #5b6270;
+    --cnt-border: #dfe2e8;
+    --cnt-shadow: 0 10px 28px rgba(20, 75, 155, 0.08);
+    --cnt-radius-lg: 18px;
+    --cnt-radius: 14px;
+    --cnt-radius-sm: 10px;
+    --cnt-live: #d9232e;
+    --cnt-up: #0a8a4b;
+    --cnt-down: #d9232e;
+    /* Silhueta genérica usada no placeholder de foto (seção 33) — ícone
+       próprio do plugin (não é logo de nenhuma entidade externa). */
+    --cnt-silhouette-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='55' r='28' fill='white'/%3E%3Cpath d='M100 90c-35 0-55 25-55 60v50h110v-50c0-35-20-60-55-60z' fill='white'/%3E%3Cpath d='M150 68l32-32M168 34a10 10 0 1 0 14 14 10 10 0 0 0-14-14z' stroke='white' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+
+    color-scheme: light;
+    color: var(--cnt-text);
+    font-family: inherit;
+    line-height: 1.45;
+    -webkit-text-size-adjust: 100%;
+}
+
+.cnt * { box-sizing: border-box; }
+.cnt a { color: var(--cnt-primary); text-decoration: none; }
+.cnt a:hover { text-decoration: underline; }
+.cnt h1, .cnt h2, .cnt h3 { color: var(--cnt-ink); line-height: 1.2; margin: 0 0 .5em; }
+.cnt img { max-width: 100%; }
+
+/* Largura editorial padrão do CartolaNews (seção 3) — nunca 100vw.
+   .cn-tennis-container é a classe utilitária reaproveitável; os seletores
+   estruturais abaixo aplicam a mesma regra automaticamente a cada seção
+   renderizada pelos shortcodes (hub completo ou shortcodes avulsos). */
+.cn-tennis-container,
+.cnt > section,
+.cnt > .cnt-summary,
+.cnt-hub > section,
+.cnt-hub > .cnt-summary,
+.cnt-hub > .cnt-power-ranking-grid,
+.cnt-hero__content {
+    width: min(calc(100% - 32px), 1240px);
+    margin-inline: auto;
+}
+
+.cnt-hub > * + * { margin-top: 48px; }
+
+.cnt-visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.cnt :focus-visible {
+    outline: 3px solid var(--cnt-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cnt * { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+/* ---------------------------------------------------------------------
+ * Imagens: nunca esticar. object-fit + aspect-ratio + posição focal.
+ * ------------------------------------------------------------------ */
+.cn-tennis-image,
+.cn-tennis-image img,
+.cnt .cn-tennis-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--cn-focal-x, 50%) var(--cn-focal-y, 50%);
+}
+
+.cnt img.cn-tennis-image,
+.cnt span.cn-tennis-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--cn-focal-x, 50%) var(--cn-focal-y, 50%);
+    display: block;
+}
+
+.cn-tennis-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--cnt-primary), #0a2d63);
+    color: var(--cnt-white);
+    font-weight: 800;
+    letter-spacing: .02em;
+    position: relative;
+    overflow: hidden;
+}
+.cn-tennis-placeholder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--cnt-silhouette-url);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 70% auto;
+    opacity: .18;
+}
+.cn-tennis-placeholder__initials { position: relative; z-index: 1; }
+.cn-tennis-placeholder--cn-tennis-avatar { border-radius: 999px; aspect-ratio: 1/1; font-size: .85rem; }
+.cn-tennis-placeholder--cn-tennis-player-card,
+.cn-tennis-placeholder--cn-tennis-legend-card { aspect-ratio: 4/5; border-radius: var(--cnt-radius); font-size: 2rem; }
+.cn-tennis-placeholder--cn-tennis-hero { aspect-ratio: 3/1; font-size: 2.5rem; }
+.cn-tennis-placeholder--cn-tennis-tournament-card { aspect-ratio: 16/9; border-radius: var(--cnt-radius); font-size: 1.5rem; }
+.cn-tennis-placeholder--cn-tennis-surface-card { aspect-ratio: 8/5; border-radius: var(--cnt-radius); font-size: 1.5rem; }
+
+img.cn-tennis-image { aspect-ratio: auto; border-radius: inherit; }
+
+/* Avatares usados em tabelas/listas (rankings, power ranking, brasileiros) */
+.cnt-ranking-table td:nth-child(2) .cn-tennis-image,
+.cnt-brazilians__item > .cn-tennis-image,
+.cnt-power-ranking__item > .cn-tennis-image,
+.cnt-summary-card__player > .cn-tennis-image,
+.cnt-surface-card__list .cn-tennis-image {
+    width: 34px; height: 34px; border-radius: 999px; aspect-ratio: 1/1; flex: none;
+}
+
+/* ---------------------------------------------------------------------
+ * Hero
+ * ------------------------------------------------------------------ */
+.cnt-hero {
+    position: relative;
+    background: linear-gradient(120deg, var(--cnt-primary) 0%, var(--cnt-primary-dark) 55%, #081d40 100%);
+    color: var(--cnt-white);
+    padding: 56px 0 44px;
+    border-radius: 0 0 28px 28px;
+    overflow: hidden;
+}
+.cnt-hero__bg {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 85% 20%, rgba(255,255,255,.12), transparent 45%),
+                       radial-gradient(circle at 10% 90%, rgba(255,255,255,.08), transparent 40%);
+    pointer-events: none;
+}
+.cnt-hero__content { position: relative; z-index: 1; text-align: center; }
+.cnt-hero__kicker {
+    text-transform: uppercase; letter-spacing: .18em; font-size: .75rem;
+    color: var(--cnt-accent-2); font-weight: 700; margin-bottom: 10px;
+}
+.cnt-hero__title { color: var(--cnt-white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
+.cnt-hero__subtitle { color: rgba(255,255,255,.85); font-size: clamp(1rem, 2vw, 1.15rem); max-width: 640px; margin: 0 auto 28px; }
+.cnt-hero__nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.cnt-hero__nav a {
+    color: var(--cnt-white);
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.28);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .92rem;
+    transition: background .15s ease, transform .15s ease;
+}
+.cnt-hero__nav a:hover { background: rgba(255,255,255,.22); text-decoration: none; transform: translateY(-1px); }
+
+/* ---------------------------------------------------------------------
+ * Resumo rápido
+ * ------------------------------------------------------------------ */
+.cnt-summary__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+}
+.cnt-summary-card {
+    background: var(--cnt-surface);
+    border: 1px solid var(--cnt-border);
+    border-radius: var(--cnt-radius);
+    padding: 18px;
+    box-shadow: var(--cnt-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.cnt-summary-card__value { font-size: 2rem; font-weight: 800; color: var(--cnt-primary); }
+.cnt-summary-card__label { color: var(--cnt-muted); font-size: .85rem; font-weight: 600; }
+.cnt-summary-card__player { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+.cnt-summary-card__player .cn-tennis-image { width: 46px; height: 46px; border-radius: 999px; aspect-ratio: 1/1; }
+.cnt-summary-card__player div { display: flex; flex-direction: column; font-size: .82rem; }
+.cnt-summary-card__player strong { font-size: .95rem; color: var(--cnt-ink); }
+
+/* ---------------------------------------------------------------------
+ * Tabs / filtros reutilizáveis (superfície, jogos, calendário)
+ * ------------------------------------------------------------------ */
+.cnt-surface-filter, .cnt-tabs {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+}
+.cnt-surface-filter button, .cnt-tabs button {
+    border: 1px solid var(--cnt-border);
+    background: var(--cnt-surface);
+    color: var(--cnt-text);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .85rem;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.cnt-surface-filter button[aria-selected="true"], .cnt-tabs button[aria-selected="true"] {
+    background: var(--cnt-primary);
+    border-color: var(--cnt-primary);
+    color: var(--cnt-white);
+}
+
+/* ---------------------------------------------------------------------
+ * Rankings
+ * ------------------------------------------------------------------ */
+.cnt-rankings__grid { display: grid; gap: 24px; }
+.cnt-rankings__grid--2 { grid-template-columns: repeat(2, 1fr); }
+.cnt-ranking-table__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.cnt-ranking-table__controls select {
+    border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius-sm);
+    padding: 6px 10px; background: var(--cnt-surface); color: var(--cnt-text);
+}
+.cnt-note { color: var(--cnt-muted); font-size: .82rem; margin: 4px 0 14px; }
+.cnt-table-wrap { overflow-x: auto; border-radius: var(--cnt-radius); border: 1px solid var(--cnt-border); }
+.cnt-table-wrap table { width: 100%; border-collapse: collapse; background: var(--cnt-surface); font-size: .9rem; }
+.cnt-table-wrap th, .cnt-table-wrap td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--cnt-border); white-space: nowrap; }
+.cnt-table-wrap thead th { background: var(--cnt-surface-2); color: var(--cnt-muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; }
+.cnt-table-wrap tbody tr:last-child td { border-bottom: none; }
+.cnt-tag { display: inline-block; font-size: .65rem; font-weight: 700; background: var(--cnt-neutral); color: var(--cnt-ink); padding: 2px 6px; border-radius: 6px; margin-left: 6px; }
+.cnt-tag--br { background: #144b9b; color: #fff; }
+.cnt-trend--up { color: var(--cnt-up); font-weight: 700; }
+.cnt-trend--down { color: var(--cnt-down); font-weight: 700; }
+.cnt-trend--same { color: var(--cnt-muted); }
+.cnt-ranking-toggle {
+    margin-top: 12px; border: 1px solid var(--cnt-primary); color: var(--cnt-primary);
+    background: transparent; padding: 8px 16px; border-radius: 999px; font-weight: 700; cursor: pointer;
+}
+.cnt-ranking-toggle:hover { background: var(--cnt-primary); color: var(--cnt-white); }
+.cnt-status--ok, .cnt-badge--ongoing { color: var(--cnt-up); }
+
+/* ---------------------------------------------------------------------
+ * Brasileiros
+ * ------------------------------------------------------------------ */
+.cnt-brazilians__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.cnt-brazilians__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.cnt-brazilians__item {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--cnt-surface); border: 1px solid var(--cnt-border);
+    border-radius: var(--cnt-radius); padding: 10px 14px;
+}
+.cnt-brazilians__item .cn-tennis-image { width: 42px; height: 42px; border-radius: 999px; aspect-ratio: 1/1; flex: none; }
+.cnt-brazilians__info { display: flex; flex-direction: column; font-size: .82rem; flex: 1; }
+.cnt-brazilians__info strong { font-size: .95rem; }
+
+/* ---------------------------------------------------------------------
+ * Power ranking
+ * ------------------------------------------------------------------ */
+.cnt-power-ranking-grid__cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 16px; }
+.cnt-power-ranking { background: var(--cnt-surface); border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius); padding: 18px; }
+.cnt-power-ranking__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.cnt-power-ranking__item { display: flex; align-items: center; gap: 12px; }
+.cnt-power-ranking__pos { font-weight: 800; color: var(--cnt-primary); width: 22px; text-align: center; }
+.cnt-power-ranking__item .cn-tennis-image { width: 40px; height: 40px; border-radius: 999px; aspect-ratio: 1/1; flex: none; }
+.cnt-power-ranking__info { display: flex; flex-direction: column; font-size: .85rem; flex: 1; }
+
+/* ---------------------------------------------------------------------
+ * Lendas
+ * ------------------------------------------------------------------ */
+.cnt-legends__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; }
+.cnt-legend-card { background: var(--cnt-surface); border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius-lg); overflow: hidden; box-shadow: var(--cnt-shadow); display: flex; flex-direction: column; }
+.cnt-legend-card__media { aspect-ratio: 4/5; }
+.cnt-legend-card__body { padding: 14px; display: flex; flex-direction: column; gap: 6px; }
+.cnt-legend-card__meta { color: var(--cnt-muted); font-size: .8rem; }
+.cnt-legend-card__stats { display: flex; flex-wrap: wrap; gap: 8px; font-size: .78rem; color: var(--cnt-text); }
+.cnt-legend-card__desc { font-size: .82rem; color: var(--cnt-muted); }
+.cnt-photo-credit, .cnt-legend-card__source { display: block; color: var(--cnt-muted); font-size: .7rem; }
+
+/* ---------------------------------------------------------------------
+ * Partidas (ao vivo / jogos / perfil)
+ * ------------------------------------------------------------------ */
+.cnt-matches-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.cnt-match-card {
+    background: var(--cnt-surface); border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius);
+    padding: 14px; display: flex; flex-direction: column; gap: 10px;
+}
+.cnt-match-card--live { border-color: var(--cnt-live); box-shadow: 0 0 0 1px var(--cnt-live) inset; }
+.cnt-match-card__top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .78rem; color: var(--cnt-muted); }
+.cnt-match-card__tournament { flex-basis: 100%; font-weight: 600; color: var(--cnt-text); }
+.cnt-match-card__time { font-weight: 700; color: var(--cnt-primary); }
+.cnt-badge { display: inline-flex; align-items: center; gap: 4px; font-size: .68rem; font-weight: 800; letter-spacing: .04em; padding: 3px 9px; border-radius: 999px; text-transform: uppercase; }
+.cnt-badge--live { background: var(--cnt-live); color: #fff; animation: cnt-pulse 1.6s infinite; }
+.cnt-badge--stale { background: var(--cnt-neutral); color: var(--cnt-ink); }
+.cnt-badge--scheduled { background: var(--cnt-accent-2); color: #fff; }
+.cnt-badge--finished { background: var(--cnt-neutral); color: var(--cnt-ink); }
+.cnt-badge--postponed, .cnt-badge--cancelled { background: #eee; color: var(--cnt-muted); }
+@keyframes cnt-pulse { 0%,100%{opacity:1;} 50%{opacity:.55;} }
+.cnt-match-card__updated { color: var(--cnt-muted); }
+.cnt-match-card__players { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.cnt-match-card__player { display: flex; align-items: center; gap: 6px; font-size: .88rem; }
+.cnt-match-card__name small { color: var(--cnt-muted); font-weight: 400; }
+.cnt-match-card__serve { color: var(--cnt-primary); font-size: .6rem; }
+.cnt-match-card__body { display: flex; align-items: center; gap: 10px; }
+.cnt-match-card__score { display: flex; flex-direction: column; gap: 4px; font-variant-numeric: tabular-nums; }
+.cnt-match-card__score-row { display: flex; gap: 6px; justify-content: flex-end; }
+.cnt-match-card__score-row span { min-width: 18px; text-align: center; font-weight: 600; color: var(--cnt-muted); }
+.cnt-match-card__score-row span.is-winner { color: var(--cnt-ink); font-weight: 800; }
+.cnt-match-card__current { color: var(--cnt-primary) !important; font-weight: 800 !important; }
+.cnt-match-card__vs { color: var(--cnt-muted); font-weight: 700; }
+.cnt-match-card__duration { font-size: .72rem; color: var(--cnt-muted); margin: 0; }
+
+/* ---------------------------------------------------------------------
+ * Calendário
+ * ------------------------------------------------------------------ */
+.cnt-calendar__head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.cnt-status--upcoming { color: var(--cnt-accent); }
+.cnt-status--finished { color: var(--cnt-muted); }
+.cnt-status--cancelled { color: var(--cnt-down); }
+
+/* ---------------------------------------------------------------------
+ * Superfícies / Grand Slams
+ * ------------------------------------------------------------------ */
+.cnt-surfaces__grid, .cnt-grand-slams__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.cnt-surface-card, .cnt-grand-slam-card {
+    background: var(--cnt-surface); border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius-lg);
+    padding: 18px; box-shadow: var(--cnt-shadow);
+}
+.cnt-surface-card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.cnt-surface-card__icon { font-size: 1.4rem; }
+.cnt-surface-card__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.cnt-surface-card__list li { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
+.cnt-surface-card__list strong { margin-left: auto; color: var(--cnt-primary); }
+.cnt-surface-card.is-highlighted { border-color: var(--cnt-primary); box-shadow: 0 0 0 2px var(--cnt-primary) inset, var(--cnt-shadow); }
+.cnt-grand-slam-card { text-align: center; }
+.cnt-grand-slam-card__icon { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+
+/* ---------------------------------------------------------------------
+ * Notícias
+ * ------------------------------------------------------------------ */
+.cnt-news__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.cnt-news-card { background: var(--cnt-surface); border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius); overflow: hidden; }
+.cnt-news-card__media { display: block; aspect-ratio: 16/9; }
+.cnt-news-card__body { padding: 12px; display: flex; flex-direction: column; gap: 4px; }
+.cnt-news-card__body time { font-size: .72rem; color: var(--cnt-muted); }
+.cnt-news-card__body h3 { font-size: .95rem; }
+.cnt-news-card__body p { font-size: .82rem; color: var(--cnt-muted); }
+
+/* ---------------------------------------------------------------------
+ * Perfil do jogador
+ * ------------------------------------------------------------------ */
+.cnt-player-profile__header { display: grid; grid-template-columns: 240px 1fr; gap: 28px; margin: 32px 0; align-items: start; }
+.cnt-player-profile__photo { border-radius: var(--cnt-radius-lg); overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--cnt-shadow); }
+.cnt-kicker { color: var(--cnt-muted); font-weight: 700; text-transform: uppercase; font-size: .78rem; letter-spacing: .06em; }
+.cnt-player-profile__fullname { color: var(--cnt-muted); margin-top: -6px; }
+.cnt-player-profile__facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px; margin-top: 18px; }
+.cnt-player-profile__facts div { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--cnt-border); padding-bottom: 4px; }
+.cnt-player-profile__facts dt { color: var(--cnt-muted); }
+.cnt-player-profile__facts dd { margin: 0; font-weight: 700; }
+.cnt-player-profile__section { margin: 32px 0; }
+.cnt-surface-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.cnt-surface-stats__item { background: var(--cnt-surface); border: 1px solid var(--cnt-border); border-radius: var(--cnt-radius); padding: 14px; text-align: center; }
+.cnt-surface-stats__item strong { display: block; font-size: 1.3rem; color: var(--cnt-primary); margin-top: 4px; }
+.cnt-back-link { margin: 32px 0; }
+
+.cnt-empty { color: var(--cnt-muted); font-size: .88rem; padding: 14px; text-align: center; background: var(--cnt-surface-2); border-radius: var(--cnt-radius); }
+
+/* =======================================================================
+ * DARK MODE
+ * Segue as classes usadas pelo tema Foxiz + atributo padrão do WordPress,
+ * com fallback por prefers-color-scheme quando nenhuma classe está presente.
+ * ===================================================================== */
+[data-theme="dark"] .cnt,
+body.dark .cnt,
+body.dark-mode .cnt,
+body.elementor-dark-mode .cnt,
+body.cn-dark .cnt,
+body.nightmode .cnt {
+    color-scheme: dark;
+    --cnt-bg: #14161c;
+    --cnt-surface: #1c1f27;
+    --cnt-surface-2: #23262f;
+    --cnt-text: #e9e9ea;
+    --cnt-muted: #a3a8b4;
+    --cnt-border: #30333d;
+    --cnt-shadow: 0 10px 28px rgba(0,0,0,.35);
+    --cnt-neutral: #2a2d36;
+}
+
+@media (prefers-color-scheme: dark) {
+    .cnt:not([data-cnt-force-light]) {
+        color-scheme: dark;
+        --cnt-bg: #14161c;
+        --cnt-surface: #1c1f27;
+        --cnt-surface-2: #23262f;
+        --cnt-text: #e9e9ea;
+        --cnt-muted: #a3a8b4;
+        --cnt-border: #30333d;
+        --cnt-shadow: 0 10px 28px rgba(0,0,0,.35);
+        --cnt-neutral: #2a2d36;
+    }
+}
+
+[data-theme="dark"] .cnt h1,
+[data-theme="dark"] .cnt h2,
+[data-theme="dark"] .cnt h3,
+body.dark .cnt h1, body.dark .cnt h2, body.dark .cnt h3 { color: var(--cnt-text); }
+
+/* =======================================================================
+ * RESPONSIVE
+ * ===================================================================== */
+@media (max-width: 1024px) {
+    .cnt-rankings__grid--2,
+    .cnt-brazilians__grid,
+    .cnt-power-ranking-grid__cols { grid-template-columns: 1fr; }
+    .cnt-player-profile__header { grid-template-columns: 180px 1fr; }
+}
+
+@media (max-width: 767px) {
+    .cnt-hero { padding: 40px 0 32px; border-radius: 0 0 20px 20px; }
+    .cnt-hub > * + * { margin-top: 32px; }
+    .cnt-player-profile__header { grid-template-columns: 1fr; }
+    .cnt-player-profile__photo { max-width: 220px; margin: 0 auto; }
+    .cnt-surface-stats { grid-template-columns: repeat(2, 1fr); }
+
+    /* Tabelas viram cartões empilhados no celular (ranking e calendário) */
+    .cnt-table-wrap table,
+    .cnt-table-wrap thead,
+    .cnt-table-wrap tbody,
+    .cnt-table-wrap tr,
+    .cnt-table-wrap td { display: block; width: 100%; }
+    .cnt-table-wrap thead { position: absolute; left: -9999px; }
+    .cnt-table-wrap tr { border-bottom: 1px solid var(--cnt-border); padding: 10px 12px; }
+    .cnt-table-wrap td { border: none; padding: 4px 0; white-space: normal; display: flex; justify-content: space-between; gap: 10px; }
+    .cnt-table-wrap td::before { content: attr(data-label); font-size: .7rem; text-transform: uppercase; color: var(--cnt-muted); font-weight: 700; }
+    .cnt-ranking-table td:first-child::before,
+    .cnt-ranking-table td:nth-child(2)::before { content: ""; }
+    .cnt-ranking-table td:nth-child(3) { justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+    .cnt-summary__grid { grid-template-columns: 1fr 1fr; }
+    .cnt-surface-stats { grid-template-columns: 1fr 1fr; }
+    .cnt-matches-grid { grid-template-columns: 1fr; }
+}

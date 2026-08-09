@@ -1,0 +1,26 @@
+.cn-tennis-admin__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0 24px;
+}
+.cn-tennis-admin__card {
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-left: 4px solid #144b9b;
+    border-radius: 6px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.cn-tennis-admin__card.is-alert { border-left-color: #d63638; }
+.cn-tennis-admin__stat { font-size: 1.8rem; font-weight: 700; color: #144b9b; }
+.cn-tennis-admin__form .form-table th { width: 220px; }
+.cn-tennis-admin__photo-picker { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.cn-tennis-admin__photo-preview { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; background: #f0f0f1; }
+.cn-tennis-admin__photo-preview img,
+.cn-tennis-admin__photo-preview .cn-tennis-image { width: 100%; height: 100%; object-fit: cover; }
+.cn-tennis-admin__inline-form { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: #f6f7f7; padding: 10px; border-radius: 4px; }
+.cn-tennis-admin__inline-form input[type="url"] { min-width: 320px; }
+.cn-tennis-admin__tabs { margin-bottom: 16px; }

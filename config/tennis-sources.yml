@@ -1,0 +1,96 @@
+# Configuração das fontes usadas pelo coletor externo (tools/tennis/sync.py).
+# Editável sem tocar no código do plugin (seção 22). GitHub Actions lê este
+# arquivo a cada execução.
+#
+# provider: chave usada por tools/tennis/providers/*.py
+# fallback: usado somente se o provider principal falhar completamente
+# status: enabled=true ativa a coleta; deixe false para pausar uma fonte
+#         sem apagar sua configuração.
+
+schema_version: 1
+
+rankings:
+  # IMPORTANTE (ver docs/DATA-SOURCES.md): atptour.com está atrás de um
+  # desafio anti-bot da Cloudflare e não é acessado por este projeto (regra
+  # explícita: nunca contornar Cloudflare/CAPTCHA). Usamos a tabela "ATP
+  # rankings (singles)" da Wikipédia — é o ranking oficial real (não a
+  # tabela vizinha de "Race Rankings", que é outra métrica), mas a
+  # Wikipédia só mantém as 20 primeiras posições atualizadas.
+  male:
+    enabled: true
+    provider: wikipedia_atp
+    fallback: none
+    url: "https://en.wikipedia.org/wiki/ATP_rankings"
+    parser: wikipedia_ranking_table
+    min_rows: 15
+    frequency: daily
+    timeout_seconds: 25
+    retries: 3
+    priority: 1
+    caveat: "Cobertura limitada ao Top 20 (a Wikipédia não mantém Top 100 do ranking oficial)"
+
+  # wtatennis.com é o site OFICIAL da WTA. robots.txt totalmente aberto,
+  # HTML renderizado no servidor (sem JavaScript necessário), responde
+  # HTTP 200 para um User-Agent identificado — testado manualmente.
+  female:
+    enabled: true
+    provider: wta_official_site
+    fallback: none
+    url: "https://www.wtatennis.com/rankings/singles"
+    parser: official_tour_site_table
+    min_rows: 50
+    frequency: daily
+    timeout_seconds: 25
+    retries: 3
+    priority: 1
+
+calendar:
+  enabled: true
+  provider: wikipedia_season
+  fallback: thesportsdb
+  urls:
+    atp: "https://en.wikipedia.org/wiki/{year}_ATP_Tour"
+    wta: "https://en.wikipedia.org/wiki/{year}_WTA_Tour"
+  parser: wikipedia_calendar_table
+  min_rows: 10
+  frequency: "3x_per_day"
+  timeout_seconds: 25
+  retries: 3
+  priority: 1
+
+matches:
+  enabled: true
+  provider: thesportsdb
+  fallback: none
+  base_url: "https://www.thesportsdb.com/api/v1/json/"
+  league_ids:
+    atp: 4464   # ATP World Tour
+    wta: 4517   # WTA Tour
+    united_cup: 5872
+    laver_cup: 4581
+    olympics: 5040
+  # A chave de teste pública "123" funciona para desenvolvimento. Para uso em
+  # produção em site comercial, use uma chave paga (Patreon) do TheSportsDB
+  # e informe via secret TENNIS_API_KEY — nunca obrigatório (seção 20).
+  api_key_secret: TENNIS_API_KEY
+  api_key_fallback: "123"
+  frequency: "every_30_min_daytime"
+  timeout_seconds: 15
+  retries: 3
+  priority: 1
+
+images:
+  provider: wikimedia_commons
+  note: >
+    Importação feita manualmente pelo administrador no painel do WordPress
+    (CartolaNews Tênis → Jogadores/Lendas), não pelo coletor automático —
+    ver includes/class-images.php::import_from_wikimedia().
+
+sync_target:
+  # Para onde o sync.py envia os snapshots já validados.
+  endpoint: "/wp-json/cartolanews-tennis/v1/sync"
+  auth: wordpress_application_password
+  secrets:
+    - WP_URL
+    - WP_USER
+    - WP_APP_PASSWORD

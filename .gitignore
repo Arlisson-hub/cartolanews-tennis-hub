@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments and editor artifacts.
+.venv/
+venv/
+.env
+.env.*
+.idea/
+.vscode/
+
+# OS-generated files.
+.DS_Store
+Thumbs.db

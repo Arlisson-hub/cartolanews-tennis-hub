@@ -1,0 +1,4 @@
+# Dependência mínima de propósito: só o parser de YAML da config de fontes.
+# Toda a coleta HTTP usa urllib (biblioteca padrão), sem "requests" — menos
+# superfície de dependência para manter no GitHub Actions.
+pyyaml>=6.0

@@ -1,0 +1,27 @@
+<!--
+Fixture FICTÍCIA para testes automatizados (seção 47 do briefing: dados
+inventados só podem existir aqui, nunca em produção). Reproduz a
+particularidade real encontrada na Wikipédia: duas tabelas aninhadas
+("Race" e "ranking oficial") dentro de um wrapper — o parser precisa
+separá-las corretamente em vez de misturar as linhas.
+-->
+<html><body>
+<table class="wrapper">
+  <tr><td>
+    <table>
+      <tr><th colspan="4">Singles race rankings as of 1 January 2099[update]</th></tr>
+      <tr><th>No.</th><th>Player</th><th>Points</th><th>Tourn</th></tr>
+      <tr><td>1</td><td>Testerson Alpha (FIC)</td><td>1,000</td><td>5</td></tr>
+      <tr><td>2</td><td>Testerson Beta (FIC)</td><td>900</td><td>6</td></tr>
+    </table>
+  </td><td>
+    <table>
+      <tr><th colspan="4">ATP rankings (singles) as of 1 January 2099[update]</th></tr>
+      <tr><th>No.</th><th>Player</th><th>Points</th><th>Move</th></tr>
+      <tr><td>1</td><td>Testerson Alpha (FIC)</td><td>9,999</td><td><img alt="Steady" src="steady.svg"></td></tr>
+      <tr><td>2</td><td>Testerson Gamma <img alt="Brazil" src="bra.svg"></td><td>8,500</td><td>+1</td></tr>
+      <tr><td>3</td><td>Testerson Beta (FIC)</td><td>8,000</td><td>-1</td></tr>
+    </table>
+  </td></tr>
+</table>
+</body></html>

@@ -1,0 +1,93 @@
+name: Sincronizar dados de Tênis
+
+# Coleta roda inteiramente aqui (GitHub Actions) — nunca no servidor do
+# WordPress (seção 21). O resultado normalizado é publicado como snapshot
+# em data/tennis/*.json e, quando os secrets estiverem configurados,
+# enviado ao endpoint REST /wp-json/cartolanews-tennis/v1/sync.
+#
+# "Ao vivo" e "jogos do dia" NÃO fazem parte deste workflow: essa
+# frequência é alta demais para o GitHub Actions (respeitar limites de API
+# — seção 23) e é tratada diretamente pelo cron do próprio plugin
+# (includes/class-cron.php), que consulta o TheSportsDB a cada 30 minutos.
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "O que sincronizar"
+        type: choice
+        options: [all, rankings, calendar]
+        default: all
+      dry_run:
+        description: "Não enviar ao WordPress (só gerar os snapshots)"
+        type: boolean
+        default: false
+
+  schedule:
+    # Rankings: 1x por dia (seção 23).
+    - cron: "17 6 * * *"
+    # Calendário: algumas vezes por dia (seção 23).
+    - cron: "27 10 * * *"
+    - cron: "27 18 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cartolanews-tennis-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install -r tools/tennis/requirements.txt
+
+      - name: Determinar alvo desta execução
+        id: target
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            case "${{ github.event.schedule }}" in
+              "17 6 * * *") echo "target=rankings" >> "$GITHUB_OUTPUT" ;;
+              *) echo "target=calendar" >> "$GITHUB_OUTPUT" ;;
+            esac
+          else
+            echo "target=${{ inputs.target || 'all' }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Coletar, validar e publicar snapshot
+        id: sync
+        env:
+          WP_URL: ${{ secrets.WP_URL }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          TENNIS_API_KEY: ${{ secrets.TENNIS_API_KEY }}
+        run: |
+          cd tools
+          EXTRA_ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            EXTRA_ARGS="--dry-run"
+          fi
+          python -m tennis.sync --target "${{ steps.target.outputs.target }}" $EXTRA_ARGS
+
+      - name: Configurar identidade do bot
+        run: |
+          git config user.name "cartolanews-tennis-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Publicar snapshots atualizados
+        run: |
+          git add data/tennis/*.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança real nos dados — nada para commitar."
+          else
+            git commit -m "Atualiza snapshots de tênis (${{ steps.target.outputs.target }})"
+            git push
+          fi

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T20:18:53.187625+00:00",
+  "source": "Wikipédia — ATP rankings (singles), ranking oficial de entrada",
+  "source_url": "https://en.wikipedia.org/wiki/ATP_rankings",
+  "verified_at": "2026-08-09T20:18:53.187625+00:00",
+  "data": [
+    {
+      "rank": 1,
+      "name": "Jannik Sinner",
+      "country_code": "ITA",
+      "points": 13450,
+      "previous_rank": null
+    },
+    {
+      "rank": 2,
+      "name": "Carlos Alcaraz",
+      "country_code": "ESP",
+      "points": 8160,
+      "previous_rank": null
+    },
+    {
+      "rank": 3,
+      "name": "Alexander Zverev",
+      "country_code": "GER",
+      "points": 8120,
+      "previous_rank": null
+    },
+    {
+      "rank": 4,
+      "name": "Félix Auger-Aliassime",
+      "country_code": "CAN",
+      "points": 4740,
+      "previous_rank": null
+    },
+    {
+      "rank": 5,
+      "name": "Novak Djokovic",
+      "country_code": "SRB",
+      "points": 3760,
+      "previous_rank": null
+    },
+    {
+      "rank": 6,
+      "name": "Daniil Medvedev",
+      "country_code": null,
+      "points": 3620,
+      "previous_rank": null
+    },
+    {
+      "rank": 7,
+      "name": "Alex de Minaur",
+      "country_code": "AUS",
+      "points": 3560,
+      "previous_rank": null
+    },
+    {
+      "rank": 8,
+      "name": "Taylor Fritz",
+      "country_code": "USA",
+      "points": 3400,
+      "previous_rank": null
+    },
+    {
+      "rank": 9,
+      "name": "Flavio Cobolli",
+      "country_code": "ITA",
+      "points": 3330,
+      "previous_rank": null
+    },
+    {
+      "rank": 10,
+      "name": "Ben Shelton",
+      "country_code": "USA",
+      "points": 2680,
+      "previous_rank": null
+    },
+    {
+      "rank": 11,
+      "name": "Alexander Bublik",
+      "country_code": "KAZ",
+      "points": 2535,
+      "previous_rank": null
+    },
+    {
+      "rank": 12,
+      "name": "Jiří Lehečka",
+      "country_code": "CZE",
+      "points": 2380,
+      "previous_rank": null
+    },
+    {
+      "rank": 13,
+      "name": "Lorenzo Musetti",
+      "country_code": "ITA",
+      "points": 2375,
+      "previous_rank": null
+    },
+    {
+      "rank": 14,
+      "name": "Casper Ruud",
+      "country_code": "NOR",
+      "points": 2345,
+      "previous_rank": null
+    },
+    {
+      "rank": 15,
+      "name": "Rafael Jódar",
+      "country_code": "ESP",
+      "points": 2243,
+      "previous_rank": null
+    },
+    {
+      "rank": 16,
+      "name": "Andrey Rublev",
+      "country_code": null,
+      "points": 2230,
+      "previous_rank": null
+    },
+    {
+      "rank": 17,
+      "name": "Jakub Menšík",
+      "country_code": "CZE",
+      "points": 2205,
+      "previous_rank": null
+    },
+    {
+      "rank": 18,
+      "name": "Valentin Vacherot",
+      "country_code": "MON",
+      "points": 2176,
+      "previous_rank": null
+    },
+    {
+      "rank": 19,
+      "name": "Learner Tien",
+      "country_code": "USA",
+      "points": 2155,
+      "previous_rank": null
+    },
+    {
+      "rank": 20,
+      "name": "Frances Tiafoe",
+      "country_code": "USA",
+      "points": 2105,
+      "previous_rank": null
+    }
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-09T20:36:02.296711+00:00",
+  "source": "Wikipédia — temporada ATP/WTA",
+  "source_url": "https://en.wikipedia.org/wiki/2026_ATP_Tour",
+  "verified_at": "2026-08-09T20:36:02.296711+00:00",
+  "data": [
+    {
+      "name": "United Cup Perth/Sydney, Australia United Cup Hard",
+      "tour": "atp",
+      "category": "unitedcup",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-05",
+      "ends_at": null
+    },
+    {
+      "name": "Hong Kong Open Hong Kong SAR ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-05",
+      "ends_at": null
+    },
+    {
+      "name": "Brisbane International Brisbane, Australia ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-05",
+      "ends_at": null
+    },
+    {
+      "name": "Adelaide International Adelaide, Australia ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-12",
+      "ends_at": null
+    },
+    {
+      "name": "Auckland Open Auckland, New Zealand ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-12",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Düsseldorf, Germany – hard (i) Quito, Ecuador – clay Plovdiv, Bulgaria – clay Bengaluru, India – hard Tatabánya, Hungary – clay (i) Le Portel, France – hard (i) Vancouver, Canada – hard (i) Jihlava, Czech Republic – hard (i) Busan, South Korea – hard (i) Tokyo, Japan – hard (i) Oslo, Norway – hard (i) Varaždin, Croatia – hard (i) Santiago, Chile – clay",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Open Occitanie Montpellier, France ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Dallas Open Dallas, United States ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-02-09",
+      "ends_at": null
+    },
+    {
+      "name": "Rotterdam Open Rotterdam, Netherlands ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-02-09",
+      "ends_at": null
+    },
+    {
+      "name": "Argentina Open Buenos Aires, Argentina ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-02-09",
+      "ends_at": null
+    },
+    {
+      "name": "Qatar Open Doha, Qatar ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-16",
+      "ends_at": null
+    },
+    {
+      "name": "Rio Open Rio de Janeiro, Brazil ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-02-16",
+      "ends_at": null
+    },
+    {
+      "name": "Delray Beach Open Delray Beach, United States ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-16",
+      "ends_at": null
+    },
+    {
+      "name": "Dubai Tennis Championships Dubai, United Arab Emirates ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-23",
+      "ends_at": null
+    },
+    {
+      "name": "Mexican Open Acapulco, Mexico ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-23",
+      "ends_at": null
+    },
+    {
+      "name": "Chile Open Santiago, Chile ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-02-23",
+      "ends_at": null
+    },
+    {
+      "name": "U.S. Men's Clay Court Championships Houston, United States ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-03-30",
+      "ends_at": null
+    },
+    {
+      "name": "Grand Prix Hassan II Marrakesh, Morocco ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-03-30",
+      "ends_at": null
+    },
+    {
+      "name": "Romanian Open Bucharest, Romania ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-03-30",
+      "ends_at": null
+    },
+    {
+      "name": "Monte-Carlo Masters Roquebrune-Cap-Martin, France ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-04-06",
+      "ends_at": null
+    },
+    {
+      "name": "Barcelona Open Barcelona, Spain ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-04-13",
+      "ends_at": null
+    },
+    {
+      "name": "Bavarian International Tennis Championships Munich, Germany ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-04-13",
+      "ends_at": null
+    },
+    {
+      "name": "Stuttgart Open Stuttgart, Germany ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-08",
+      "ends_at": null
+    },
+    {
+      "name": "Rosmalen Open 's-Hertogenbosch, Netherlands ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-08",
+      "ends_at": null
+    },
+    {
+      "name": "Halle Open Halle, Germany ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-15",
+      "ends_at": null
+    },
+    {
+      "name": "Queen's Club Championships London, United Kingdom ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-15",
+      "ends_at": null
+    },
+    {
+      "name": "Mallorca Championships Santa Ponsa, Spain ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-22",
+      "ends_at": null
+    },
+    {
+      "name": "Eastbourne Open Eastbourne, United Kingdom ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-22",
+      "ends_at": null
+    },
+    {
+      "name": "Swedish Open Båstad, Sweden ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-13",
+      "ends_at": null
+    },
+    {
+      "name": "Swiss Open Gstaad, Switzerland ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-13",
+      "ends_at": null
+    },
+    {
+      "name": "Croatia Open Umag, Croatia ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-13",
+      "ends_at": null
+    },
+    {
+      "name": "Austrian Open Kitzbühel, Austria ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-20",
+      "ends_at": null
+    },
+    {
+      "name": "Estoril Open Estoril, Portugal ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-20",
+      "ends_at": null
+    },
+    {
+      "name": "Washington Open Washington, D.C., United States ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-07-27",
+      "ends_at": null
+    },
+    {
+      "name": "Los Cabos Open Los Cabos, Mexico ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-07-27",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers second round",
+      "tour": "atp",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "Laver Cup London, United Kingdom Hard (i)",
+      "tour": "atp",
+      "category": "lavercup",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "Chengdu Open Chengdu, China ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "Hangzhou Open Hangzhou, China ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "China Open Beijing, China ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-28",
+      "ends_at": null
+    },
+    {
+      "name": "Japan Open Tokyo, Japan ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-28",
+      "ends_at": null
+    },
+    {
+      "name": "Almaty Open Almaty, Kazakhstan ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-10-19",
+      "ends_at": null
+    },
+    {
+      "name": "Grand Prix Auvergne-Rhône-Alpes Lyon, France ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-10-19",
+      "ends_at": null
+    },
+    {
+      "name": "European Open Brussels, Belgium ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-10-19",
+      "ends_at": null
+    },
+    {
+      "name": "Swiss Indoors Basel, Switzerland ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-10-26",
+      "ends_at": null
+    },
+    {
+      "name": "Vienna Open Vienna, Austria ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-10-26",
+      "ends_at": null
+    },
+    {
+      "name": "Paris Masters Nanterre, France ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-11-02",
+      "ends_at": null
+    },
+    {
+      "name": "Stockholm Open Stockholm, Sweden ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-11-09",
+      "ends_at": null
+    },
+    {
+      "name": "ATP Finals Turin, Italy ATP Finals Hard (i)",
+      "tour": "atp",
+      "category": "atpfinals",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-11-16",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Finals Bologna, Italy Hard (i)",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-11-23",
+      "ends_at": null
+    },
+    {
+      "name": "Adelaide International Adelaide, Australia WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-12",
+      "ends_at": null
+    },
+    {
+      "name": "Hobart International Hobart, Australia WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-12",
+      "ends_at": null
+    },
+    {
+      "name": "Jan",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-01-12",
+      "ends_at": null
+    },
+    {
+      "name": "Abu Dhabi Open Abu Dhabi, United Arab Emirates WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Ostrava Open Ostrava, Czech Republic WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Transylvania Open Cluj-Napoca, Romania WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Qatar Open Doha, Qatar WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-09",
+      "ends_at": null
+    },
+    {
+      "name": "Dubai Tennis Championships Dubai, UAE WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-16",
+      "ends_at": null
+    },
+    {
+      "name": "Mérida Open Mérida, Mexico WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-23",
+      "ends_at": null
+    },
+    {
+      "name": "ATX Open Austin, United States WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-02-23",
+      "ends_at": null
+    },
+    {
+      "name": "Billie Jean King Cup qualifying round",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-04-06",
+      "ends_at": null
+    },
+    {
+      "name": "Linz Open Linz, Austria WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-04-06",
+      "ends_at": null
+    },
+    {
+      "name": "Stuttgart Open Stuttgart, Germany WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-04-13",
+      "ends_at": null
+    },
+    {
+      "name": "Open de Rouen Rouen, France WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-04-13",
+      "ends_at": null
+    },
+    {
+      "name": "Apr",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-04-13",
+      "ends_at": null
+    },
+    {
+      "name": "Internationaux de Strasbourg Strasbourg, France WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-18",
+      "ends_at": null
+    },
+    {
+      "name": "Morocco Open Rabat, Morocco WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-18",
+      "ends_at": null
+    },
+    {
+      "name": "May",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-05-18",
+      "ends_at": null
+    },
+    {
+      "name": "Queen's Club Championships London, United Kingdom WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-08",
+      "ends_at": null
+    },
+    {
+      "name": "Rosmalen Championships Rosmalen, Netherlands WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-08",
+      "ends_at": null
+    },
+    {
+      "name": "German Open Berlin, Germany WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-15",
+      "ends_at": null
+    },
+    {
+      "name": "Nottingham Open Nottingham, United Kingdom WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-15",
+      "ends_at": null
+    },
+    {
+      "name": "Bad Homburg Open Bad Homburg, Germany WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-21",
+      "ends_at": null
+    },
+    {
+      "name": "Eastbourne Open Eastbourne, United Kingdom WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-21",
+      "ends_at": null
+    },
+    {
+      "name": "Jun",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-06-21",
+      "ends_at": null
+    },
+    {
+      "name": "Iași Open Iași, Romania WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-13",
+      "ends_at": null
+    },
+    {
+      "name": "Athens Open Athens, Greece WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-07-13",
+      "ends_at": null
+    },
+    {
+      "name": "Hamburg Open Hamburg, Germany WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-07-20",
+      "ends_at": null
+    },
+    {
+      "name": "Prague Open Prague, Czech Republic WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-07-20",
+      "ends_at": null
+    },
+    {
+      "name": "Washington Open Washington DC, United States WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-07-27",
+      "ends_at": null
+    },
+    {
+      "name": "Memphis Classic Memphis, United States WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-07-27",
+      "ends_at": null
+    },
+    {
+      "name": "Guadalajara Open Guadalajara, Mexico WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "SP Open São Paulo, Brazil WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "Billie Jean King Cup Finals Shenzhen, China Hard (i)",
+      "tour": "wta",
+      "category": "",
+      "surface": "indoor",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "Singapore Open Singapore, Singapore WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "Korea Open Seoul, South Korea WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "Sep",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-09-21",
+      "ends_at": null
+    },
+    {
+      "name": "Wuhan Open Wuhan, China WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-10-12",
+      "ends_at": null
+    },
+    {
+      "name": "Ningbo Open Ningbo, China WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-10-19",
+      "ends_at": null
+    },
+    {
+      "name": "Japan Open Osaka, Japan WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-10-19",
+      "ends_at": null
+    },
+    {
+      "name": "Pan Pacific Open Tokyo, Japan WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-10-26",
+      "ends_at": null
+    },
+    {
+      "name": "Guangzhou Open Guangzhou, China WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-10-26",
+      "ends_at": null
+    },
+    {
+      "name": "Hong Kong Open Hong Kong, China WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-11-02",
+      "ends_at": null
+    },
+    {
+      "name": "Chennai Open[a] Chennai, India WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-11-02",
+      "ends_at": null
+    },
+    {
+      "name": "WTA Finals Indian Wells, United States Year-end championships Hard",
+      "tour": "wta",
+      "category": "wtafinals",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-11-09",
+      "ends_at": null
+    },
+    {
+      "name": "Billie Jean King Cup playoffs",
+      "tour": "wta",
+      "category": "",
+      "surface": "",
+      "city": "",
+      "starts_at": "2026-11-16",
+      "ends_at": null
+    }
+  ]
+}
