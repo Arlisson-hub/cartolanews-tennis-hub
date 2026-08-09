@@ -143,14 +143,58 @@ final class CN_Tennis_Calendar {
         }
 
         $limit = max(1, min(300, (int) ($args['limit'] ?? 100)));
-        $params[] = $limit;
-        $sql = "SELECT * FROM {$table} WHERE " . implode(' AND ', $where) . " ORDER BY starts_at ASC LIMIT %d";
-        return $wpdb->get_results($wpdb->prepare($sql, ...$params), ARRAY_A) ?: [];
+
+        // Importacoes manuais antigas podem representar o mesmo torneio que
+        // passou a chegar pelo feed automatico. Buscamos uma margem maior e
+        // removemos apenas duplicatas de exibicao; nenhum registro e apagado.
+        $fetch_limit = min(1200, $limit * 4);
+        $params[] = $fetch_limit;
+        $sql = "SELECT * FROM {$table} WHERE " . implode(' AND ', $where)
+            . " ORDER BY starts_at ASC, manual_override DESC,"
+            . " CASE WHEN provider='manual' THEN 1 ELSE 0 END ASC, id ASC LIMIT %d";
+        $rows = $wpdb->get_results($wpdb->prepare($sql, ...$params), ARRAY_A) ?: [];
+        return self::deduplicate_rows($rows, $limit);
+    }
+
+    /**
+     * Mantem uma linha por torneio/data/tour sem alterar o banco. Uma edicao
+     * manual explicitamente bloqueada sempre vence; caso contrario, o feed
+     * automatico e preferido ao registro manual legado.
+     */
+    private static function deduplicate_rows(array $rows, int $limit): array {
+        $unique = [];
+        $order = [];
+
+        foreach ($rows as $row) {
+            $key = sanitize_title((string) ($row['name'] ?? ''))
+                . '|' . (string) ($row['starts_at'] ?? '')
+                . '|' . (string) ($row['tour'] ?? '');
+            $priority = !empty($row['manual_override']) ? 2 : (($row['provider'] ?? '') === 'manual' ? 0 : 1);
+
+            if (!isset($unique[$key])) {
+                $unique[$key] = ['priority' => $priority, 'row' => $row];
+                $order[] = $key;
+            } elseif ($priority > $unique[$key]['priority']) {
+                $unique[$key] = ['priority' => $priority, 'row' => $row];
+            }
+        }
+
+        $result = [];
+        foreach ($order as $key) {
+            $result[] = $unique[$key]['row'];
+            if (count($result) >= $limit) {
+                break;
+            }
+        }
+        return $result;
     }
 
     public static function count_ongoing(): int {
         global $wpdb;
-        return (int) $wpdb->get_var("SELECT COUNT(*) FROM " . self::table() . " WHERE status='ongoing'");
+        return (int) $wpdb->get_var(
+            "SELECT COUNT(DISTINCT CONCAT_WS('|', LOWER(TRIM(name)), COALESCE(starts_at, ''), tour))"
+            . " FROM " . self::table() . " WHERE status='ongoing'"
+        );
     }
 
     public static function find(int $id): ?array {

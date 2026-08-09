@@ -48,3 +48,26 @@ test('status declarado explicitamente (ex.: cancelled) nunca é sobrescrito pela
     $status = cn_call_static('CN_Tennis_Calendar', 'status_from_dates', [gmdate('Y-m-d', strtotime('-100 days')), null, 'cancelled']);
     assert_equal('cancelled', $status);
 });
+
+test('calendario oculta duplicata manual legada sem apagar dados', function () {
+    $rows = [
+        ['id' => 1, 'name' => 'Rio Open', 'starts_at' => '2026-02-16', 'tour' => 'atp', 'provider' => 'manual', 'manual_override' => 0],
+        ['id' => 2, 'name' => 'Rio Open', 'starts_at' => '2026-02-16', 'tour' => 'atp', 'provider' => 'github', 'manual_override' => 0],
+        ['id' => 3, 'name' => 'Wimbledon', 'starts_at' => '2026-06-29', 'tour' => 'both', 'provider' => 'github', 'manual_override' => 0],
+    ];
+
+    $deduplicated = cn_call_static('CN_Tennis_Calendar', 'deduplicate_rows', [$rows, 10]);
+    assert_equal(2, count($deduplicated));
+    assert_equal(2, (int) $deduplicated[0]['id'], 'feed automatico deve vencer o manual legado equivalente');
+});
+
+test('edicao manual bloqueada vence o feed automatico equivalente', function () {
+    $rows = [
+        ['id' => 10, 'name' => 'US Open', 'starts_at' => '2026-08-31', 'tour' => 'both', 'provider' => 'github', 'manual_override' => 0],
+        ['id' => 11, 'name' => 'US Open', 'starts_at' => '2026-08-31', 'tour' => 'both', 'provider' => 'manual', 'manual_override' => 1],
+    ];
+
+    $deduplicated = cn_call_static('CN_Tennis_Calendar', 'deduplicate_rows', [$rows, 10]);
+    assert_equal(1, count($deduplicated));
+    assert_equal(11, (int) $deduplicated[0]['id']);
+});
