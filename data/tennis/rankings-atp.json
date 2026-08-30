@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-24T07:29:44.125425+00:00",
+  "generated_at": "2026-08-30T11:56:04.751374+00:00",
   "source": "ATP Tour — PIF ATP Rankings, relatório numérico oficial",
   "source_url": "https://www.protennislive.com/posting/ramr/singles_entry_numerical.pdf",
-  "verified_at": "2026-08-24T07:29:44.125425+00:00",
+  "verified_at": "2026-08-30T11:56:04.751374+00:00",
   "data": [
     {
       "rank": 1,
@@ -210,58 +210,58 @@
     },
     {
       "rank": 30,
+      "name": "Ignacio Buse",
+      "country_code": "PER",
+      "points": 1550,
+      "previous_rank": null
+    },
+    {
+      "rank": 31,
       "name": "Ugo Humbert",
       "country_code": "FRA",
       "points": 1545,
       "previous_rank": null
     },
     {
-      "rank": 31,
+      "rank": 32,
       "name": "Tomas Martin Etcheverry",
       "country_code": "ARG",
       "points": 1440,
       "previous_rank": null
     },
     {
-      "rank": 32,
+      "rank": 33,
+      "name": "Arthur Fery",
+      "country_code": "GBR",
+      "points": 1415,
+      "previous_rank": null
+    },
+    {
+      "rank": 34,
       "name": "Alexander Blockx",
       "country_code": "BEL",
       "points": 1396,
       "previous_rank": null
     },
     {
-      "rank": 33,
+      "rank": 35,
       "name": "Cameron Norrie",
       "country_code": "GBR",
       "points": 1365,
       "previous_rank": null
     },
     {
-      "rank": 34,
+      "rank": 36,
       "name": "Matteo Arnaldi",
       "country_code": "ITA",
       "points": 1349,
       "previous_rank": null
     },
     {
-      "rank": 35,
+      "rank": 37,
       "name": "Zizou Bergs",
       "country_code": "BEL",
       "points": 1345,
-      "previous_rank": null
-    },
-    {
-      "rank": 36,
-      "name": "Ignacio Buse",
-      "country_code": "PER",
-      "points": 1310,
-      "previous_rank": null
-    },
-    {
-      "rank": 37,
-      "name": "Arthur Fery",
-      "country_code": "GBR",
-      "points": 1253,
       "previous_rank": null
     },
     {
@@ -315,51 +315,51 @@
     },
     {
       "rank": 45,
+      "name": "Juan Manuel Cerundolo",
+      "country_code": "ARG",
+      "points": 1076,
+      "previous_rank": null
+    },
+    {
+      "rank": 46,
       "name": "Alex Michelsen",
       "country_code": "USA",
       "points": 1070,
       "previous_rank": null
     },
     {
-      "rank": 46,
+      "rank": 47,
       "name": "Hubert Hurkacz",
       "country_code": "POL",
       "points": 1070,
       "previous_rank": null
     },
     {
-      "rank": 47,
+      "rank": 48,
       "name": "Denis Shapovalov",
       "country_code": "CAN",
       "points": 1065,
       "previous_rank": null
     },
     {
-      "rank": 48,
+      "rank": 49,
       "name": "Mariano Navone",
       "country_code": "ARG",
       "points": 1065,
       "previous_rank": null
     },
     {
-      "rank": 49,
+      "rank": 50,
       "name": "Karen Khachanov",
       "country_code": null,
       "points": 1050,
       "previous_rank": null
     },
     {
-      "rank": 50,
+      "rank": 51,
       "name": "Sebastian Baez",
       "country_code": "ARG",
       "points": 1044,
-      "previous_rank": null
-    },
-    {
-      "rank": 51,
-      "name": "Juan Manuel Cerundolo",
-      "country_code": "ARG",
-      "points": 1040,
       "previous_rank": null
     },
     {
@@ -373,7 +373,7 @@
       "rank": 53,
       "name": "Stefanos Tsitsipas",
       "country_code": "GRE",
-      "points": 1000,
+      "points": 1015,
       "previous_rank": null
     },
     {
@@ -420,16 +420,16 @@
     },
     {
       "rank": 60,
-      "name": "Ethan Quinn",
-      "country_code": "USA",
-      "points": 949,
+      "name": "Adolfo Daniel Vallejo",
+      "country_code": "PAR",
+      "points": 954,
       "previous_rank": null
     },
     {
       "rank": 61,
-      "name": "Adolfo Daniel Vallejo",
-      "country_code": "PAR",
-      "points": 948,
+      "name": "Ethan Quinn",
+      "country_code": "USA",
+      "points": 949,
       "previous_rank": null
     },
     {
@@ -490,72 +490,72 @@
     },
     {
       "rank": 70,
+      "name": "Botic van de Zandschulp",
+      "country_code": "NED",
+      "points": 868,
+      "previous_rank": null
+    },
+    {
+      "rank": 71,
+      "name": "James Duckworth",
+      "country_code": "AUS",
+      "points": 853,
+      "previous_rank": null
+    },
+    {
+      "rank": 72,
       "name": "Jaime Faria",
       "country_code": "POR",
       "points": 847,
       "previous_rank": null
     },
     {
-      "rank": 71,
-      "name": "Botic van de Zandschulp",
-      "country_code": "NED",
-      "points": 834,
-      "previous_rank": null
-    },
-    {
-      "rank": 72,
+      "rank": 73,
       "name": "Kamil Majchrzak",
       "country_code": "POL",
       "points": 827,
       "previous_rank": null
     },
     {
-      "rank": 73,
+      "rank": 74,
       "name": "Jenson Brooksby",
       "country_code": "USA",
-      "points": 800,
+      "points": 803,
       "previous_rank": null
     },
     {
-      "rank": 74,
+      "rank": 75,
       "name": "Valentin Royer",
       "country_code": "FRA",
       "points": 778,
       "previous_rank": null
     },
     {
-      "rank": 75,
+      "rank": 76,
       "name": "Jan Choinski",
       "country_code": "GBR",
       "points": 773,
       "previous_rank": null
     },
     {
-      "rank": 76,
+      "rank": 77,
       "name": "Camilo Ugo Carabelli",
       "country_code": "ARG",
       "points": 770,
       "previous_rank": null
     },
     {
-      "rank": 77,
+      "rank": 78,
       "name": "Marcos Giron",
       "country_code": "USA",
       "points": 765,
       "previous_rank": null
     },
     {
-      "rank": 78,
+      "rank": 79,
       "name": "Hamad Medjedovic",
       "country_code": "SRB",
       "points": 764,
-      "previous_rank": null
-    },
-    {
-      "rank": 79,
-      "name": "James Duckworth",
-      "country_code": "AUS",
-      "points": 763,
       "previous_rank": null
     },
     {
@@ -588,65 +588,65 @@
     },
     {
       "rank": 84,
-      "name": "Alex Molcan",
-      "country_code": "SVK",
-      "points": 710,
+      "name": "Aleksandar Kovacevic",
+      "country_code": "USA",
+      "points": 730,
       "previous_rank": null
     },
     {
       "rank": 85,
       "name": "Rinky Hijikata",
       "country_code": "AUS",
-      "points": 709,
+      "points": 724,
       "previous_rank": null
     },
     {
       "rank": 86,
+      "name": "Alex Molcan",
+      "country_code": "SVK",
+      "points": 710,
+      "previous_rank": null
+    },
+    {
+      "rank": 87,
       "name": "Arthur Gea",
       "country_code": "FRA",
       "points": 709,
       "previous_rank": null
     },
     {
-      "rank": 87,
+      "rank": 88,
       "name": "Sho Shimabukuro",
       "country_code": "JPN",
       "points": 705,
       "previous_rank": null
     },
     {
-      "rank": 88,
+      "rank": 89,
+      "name": "Lorenzo Sonego",
+      "country_code": "ITA",
+      "points": 698,
+      "previous_rank": null
+    },
+    {
+      "rank": 90,
+      "name": "Martin Damm",
+      "country_code": "USA",
+      "points": 697,
+      "previous_rank": null
+    },
+    {
+      "rank": 91,
       "name": "Hugo Gaston",
       "country_code": "FRA",
       "points": 697,
       "previous_rank": null
     },
     {
-      "rank": 89,
-      "name": "Aleksandar Kovacevic",
-      "country_code": "USA",
-      "points": 690,
-      "previous_rank": null
-    },
-    {
-      "rank": 90,
+      "rank": 92,
       "name": "Terence Atmane",
       "country_code": "FRA",
       "points": 687,
-      "previous_rank": null
-    },
-    {
-      "rank": 91,
-      "name": "Lorenzo Sonego",
-      "country_code": "ITA",
-      "points": 683,
-      "previous_rank": null
-    },
-    {
-      "rank": 92,
-      "name": "Martin Damm",
-      "country_code": "USA",
-      "points": 675,
       "previous_rank": null
     },
     {
@@ -665,44 +665,44 @@
     },
     {
       "rank": 95,
+      "name": "Mattia Bellucci",
+      "country_code": "ITA",
+      "points": 659,
+      "previous_rank": null
+    },
+    {
+      "rank": 96,
       "name": "Aleksandar Vukic",
       "country_code": "AUS",
       "points": 659,
       "previous_rank": null
     },
     {
-      "rank": 96,
-      "name": "Mattia Bellucci",
-      "country_code": "ITA",
+      "rank": 97,
+      "name": "Benjamin Bonzi",
+      "country_code": "FRA",
       "points": 656,
       "previous_rank": null
     },
     {
-      "rank": 97,
+      "rank": 98,
       "name": "Aleksandr Shevchenko",
       "country_code": "KAZ",
       "points": 655,
       "previous_rank": null
     },
     {
-      "rank": 98,
+      "rank": 99,
       "name": "Roman Safiullin",
       "country_code": null,
       "points": 634,
       "previous_rank": null
     },
     {
-      "rank": 99,
+      "rank": 100,
       "name": "Jesper de Jong",
       "country_code": "NED",
       "points": 628,
-      "previous_rank": null
-    },
-    {
-      "rank": 100,
-      "name": "Jacob Fearnley",
-      "country_code": "GBR",
-      "points": 623,
       "previous_rank": null
     }
   ]
