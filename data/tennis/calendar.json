@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-16T15:02:07.794238+00:00",
+  "generated_at": "2026-09-20T14:16:20.986050+00:00",
   "source": "Wikipédia — temporada ATP/WTA",
   "source_url": "https://en.wikipedia.org/wiki/2026_ATP_Tour",
-  "verified_at": "2026-09-16T15:02:07.794238+00:00",
+  "verified_at": "2026-09-20T14:16:20.986050+00:00",
   "data": [
     {
       "name": "United Cup Perth/Sydney, Australia United Cup Hard",
@@ -756,7 +756,7 @@
       "name": "Singapore Open Singapore, Singapore WTA",
       "tour": "wta",
       "category": "wta500",
-      "surface": "hard",
+      "surface": "indoor",
       "city": "",
       "starts_at": "2026-09-21",
       "ends_at": null
