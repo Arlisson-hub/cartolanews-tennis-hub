@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-21T12:51:17.553278+00:00",
+  "generated_at": "2026-09-22T11:41:47.136948+00:00",
   "source": "WTA Tennis — Official Rankings (wtatennis.com)",
   "source_url": "https://www.wtatennis.com/rankings/singles",
-  "verified_at": "2026-09-21T12:51:17.553278+00:00",
+  "verified_at": "2026-09-22T11:41:47.136948+00:00",
   "data": [
     {
       "rank": 1,
@@ -19,7 +19,7 @@
       "country_code": "BLR",
       "points": 7875,
       "previous_rank": null,
-      "tournaments_played": 18
+      "tournaments_played": 19
     },
     {
       "rank": 3,
