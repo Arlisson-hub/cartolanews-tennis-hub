@@ -141,9 +141,14 @@ def sync_calendar(config: dict, *, changed: dict[str, bool]) -> None:
             row["starts_at"], row["ends_at"] = parsed
         normalized_rows.append({k: v for k, v in row.items() if k != "date_text"})
 
+    # Evento com chave masculina e feminina (Grand Slam, United Cup) aparece nas
+    # duas páginas de tour: vira uma linha `tour=both` antes de validar, senão as
+    # duas colidiriam na UNIQUE KEY (provider, external_id).
+    normalized_rows = normalize.merge_cross_tour_events(normalized_rows)
+
     valid_rows, discarded, oversized = validate.validate_calendar_rows(normalized_rows)
     for motivo in oversized:
-        log(f"Calendário: linha descartada por não caber no banco — {motivo}", level="warning")
+        log(f"Calendário: linha descartada — {motivo}", level="warning")
     if not valid_rows:
         log("Calendário: nenhuma linha válida coletada nesta execução; snapshot anterior preservado.", level="warning")
         return

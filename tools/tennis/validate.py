@@ -62,10 +62,17 @@ def calendar_row_too_long(row: dict[str, Any]) -> str | None:
 
 
 def validate_calendar_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int, list[str]]:
-    """@return (linhas válidas, descartadas, motivos dos descartes por tamanho)"""
+    """@return (linhas válidas, descartadas, motivos dos descartes)
+
+    Além do tamanho das colunas, barra `external_id` repetido: a tabela tem
+    `UNIQUE KEY provider_external (provider, external_id)`, então a segunda
+    linha de um par colidente teria o INSERT recusado. Preferimos descartar
+    aqui, com motivo explícito, a publicar um feed que o banco vai rejeitar.
+    """
     valid = []
     discarded = 0
     oversized: list[str] = []
+    vistos: dict[str, str] = {}
     for row in rows:
         name = (row.get("name") or "").strip()
         starts_at = row.get("starts_at")
@@ -81,6 +88,15 @@ def validate_calendar_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, A
             discarded += 1
             oversized.append(f"{name[:60]}...: {too_long}")
             continue
+        external_id = derived_external_id(name, str(starts_at))
+        if external_id in vistos:
+            discarded += 1
+            oversized.append(
+                f"{name[:60]}...: external_id repetido ({external_id[:60]}), "
+                f"já usado por {vistos[external_id][:60]}"
+            )
+            continue
+        vistos[external_id] = name
         valid.append(row)
     return valid, discarded, oversized
 

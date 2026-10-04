@@ -85,6 +85,46 @@ def parse_wikipedia_date_range(text: str, year: int) -> tuple[str, str | None] |
     return starts_at.isoformat(), ends_at.isoformat()
 
 
+def merge_cross_tour_events(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Funde o mesmo evento visto pelas duas páginas de tour numa linha só.
+
+    Grand Slam e United Cup têm chave masculina e feminina no MESMO torneio, e
+    aparecem tanto em `<ano>_ATP_Tour` quanto em `<ano>_WTA_Tour`. Nos demais
+    torneios o próprio nome traz o nível ("... ATP 250" / "... WTA 500"), então
+    as duas páginas geram nomes diferentes e nada é fundido aqui. Para os de
+    categoria neutra ("Grand Slam", "United Cup") o nome sai idêntico — e, como
+    `external_id` é derivado de nome + data, as duas linhas colidiriam na
+    UNIQUE KEY (provider, external_id) do banco.
+
+    A evidência de que é o mesmo evento é estrutural: mesmo nome, mesma data de
+    início e mesma superfície, vindos de tours diferentes. Nesse caso vira uma
+    linha com `tour="both"` — a mesma convenção que o administrador já usa nos
+    Grand Slams cadastrados à mão. Qualquer divergência de superfície impede a
+    fusão: aí preferimos duas linhas a inventar uma.
+    """
+    agrupado: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    ordem: list[tuple[str, str]] = []
+    for row in rows:
+        chave = ((row.get("name") or "").strip(), str(row.get("starts_at") or ""))
+        if chave not in agrupado:
+            agrupado[chave] = []
+            ordem.append(chave)
+        agrupado[chave].append(row)
+
+    saida: list[dict[str, Any]] = []
+    for chave in ordem:
+        grupo = agrupado[chave]
+        tours = {row.get("tour") for row in grupo}
+        superficies = {row.get("surface") or "" for row in grupo}
+        if len(grupo) > 1 and tours == {"atp", "wta"} and len(superficies) == 1:
+            fundido = dict(grupo[0])
+            fundido["tour"] = "both"
+            saida.append(fundido)
+            continue
+        saida.extend(grupo)
+    return saida
+
+
 def build_envelope(*, source: str, source_url: str, data: list[dict[str, Any]]) -> dict[str, Any]:
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
     return {

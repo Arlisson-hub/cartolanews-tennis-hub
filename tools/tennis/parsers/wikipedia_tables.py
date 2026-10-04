@@ -10,6 +10,7 @@ Wikipédia (en.wikipedia.org). Regras:
 """
 from __future__ import annotations
 
+import calendar
 import re
 
 COUNTRY_NAME_TO_ISO3 = {
@@ -108,12 +109,64 @@ def extract_ranking_rows(table: list[list[str]]) -> list[dict]:
 
 
 _WEEK_DATE = re.compile(r"^(?:\d{1,2}\s+[A-Za-z]{3,}|[A-Za-z]{3,}\s+\d{1,2})$")
+# Ordem dos meses para detectar a virada do ano numa celula de semana.
+_MES_INDICE = {nome.lower(): i for i, nome in enumerate(calendar.month_abbr) if nome}
+_MES_INDICE.update({nome.lower(): i for i, nome in enumerate(calendar.month_name) if nome})
+
+
+def _week_cell_dates(cell: str) -> list[str] | None:
+    """Datas da celula da coluna Week, ou None se a celula nao for de datas.
+
+    A coluna Week traz UMA data por semana que o torneio ocupa. Torneio de duas
+    semanas (todo Grand Slam e vários 1000) traz DUAS, separadas por `<br>` —
+    e a versao anterior desta funcao era uma regex ancorada em `$`, que sо
+    reconhecia uma. A linha caia no ramo de `rowspan`, a celula de datas era
+    tomada como nome do torneio e o torneio real (celula seguinte) era perdido
+    em silencio. Era isso que produzia "Jan"/"Apr"/"May"/"Jun"/"Sep" e, ao mesmo
+    tempo, fazia desaparecerem Australian Open, Roland Garros, Wimbledon,
+    US Open, Indian Wells, Miami, Madrid, Roma, Canada, Cincinnati e Xangai.
+
+    O reconhecimento e ESTRUTURAL, nao por lista de meses: a celula e de datas
+    quando TODOS os seus segmentos sao datas. Nome de torneio nunca e composto
+    apenas de tokens de data, nem quando tem mes no nome ("Mutua Madrid Open",
+    "US Open") — porque ai sobra texto que nao casa `_WEEK_DATE`.
+    """
+    partes = [parte.strip() for parte in cell.split(BR_MARKER) if parte.strip()]
+    if not partes:
+        return None
+    return partes if all(_WEEK_DATE.match(parte) for parte in partes) else None
+
+
+def _season_week(dates: list[str]) -> str:
+    """Semana que representa o torneio dentro da temporada da pagina.
+
+    Normalmente e a primeira. Quando a celula atravessa a virada do ano
+    (United Cup: "Dec 29" + "Jan 5"), a primeira data pertence ao ano anterior
+    ao da pagina, e usa-la produziria uma data um ano no futuro. A virada e
+    detectada pela ORDEM dos meses, nao por nome: se um mes posterior na lista
+    tem indice menor, a lista deu a volta e a semana da temporada e a de
+    depois da volta.
+    """
+    if len(dates) < 2:
+        return dates[0]
+    indices = []
+    for data in dates:
+        mes = next((token for token in data.replace(",", " ").split() if token.isalpha()), "")
+        indices.append(_MES_INDICE.get(mes.lower(), 0))
+    for anterior, atual in zip(range(len(indices) - 1), range(1, len(indices))):
+        if indices[atual] and indices[anterior] and indices[atual] < indices[anterior]:
+            return dates[atual]
+    return dates[0]
 _CATEGORY_PATTERN = re.compile(
     r"\b(Grand Slam|ATP\s?1000|ATP\s?500|ATP\s?250|WTA\s?1000|WTA\s?500|WTA\s?250|Masters\s?1000|Challenger|ATP\s?Finals|WTA\s?Finals|United\s?Cup|Laver\s?Cup|Olympics)\b",
     re.IGNORECASE,
 )
 _SURFACE_PATTERN = re.compile(r"\b(Hard|Clay|Grass|Carpet)\b\s*(\(i\))?", re.IGNORECASE)
-_CUT_MARKERS = re.compile(r"[€$£]|\d")
+# Onde o texto descritivo do torneio termina e comecam premiacao/chaves.
+# O prefixo opcional de 1-2 maiusculas cobre "A$" (AUD) e "US$"/"C$": sem ele o
+# nome do torneio ficava terminando num "A" solto. So casa quando a letra vem
+# imediatamente antes do simbolo, entao "US Open" nao e afetado.
+_CUT_MARKERS = re.compile(r"[A-Z]{1,2}?[€$£]|[€$£]|\d")
 
 # Marcador de <br> preservado pelo parser de tabelas (ver commons.parse_html_tables).
 # Precisa ser invisível, nunca presente no texto da Wikipédia e — crítico —
@@ -221,8 +274,9 @@ def extract_calendar_rows(table: list[list[str]], tour: str) -> list[dict]:
             continue
 
         first_cell = raw_row[0].replace(BR_MARKER, " ").strip()
-        if _WEEK_DATE.match(first_cell):
-            current_week = first_cell
+        semanas = _week_cell_dates(raw_row[0])
+        if semanas:
+            current_week = _season_week(semanas)
             tournament_cell = raw_row[1] if len(raw_row) > 1 else ""
         elif len(raw_row) >= 4:
             # Rowspan da coluna Week "escondeu" a data nesta linha; ainda
