@@ -51,7 +51,7 @@ def test_extract_calendar_rows_carries_week_forward_and_skips_doubles_subrows():
 
     third = next(r for r in rows if r["name"].startswith("Third Test"))
     assert third["date_text"] == "9 Feb"
-    assert third["category"] == "grandslam"
+    assert third["category"] == "grand_slam"
     assert third["surface"] == "grass"
 
 
