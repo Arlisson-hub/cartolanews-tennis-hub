@@ -7,6 +7,8 @@ publicação inteira se a taxa de descarte for alta demais.
 from __future__ import annotations
 
 import datetime
+import re
+import unicodedata
 from typing import Any
 
 
@@ -29,9 +31,41 @@ def validate_ranking_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, An
     return valid, discarded
 
 
-def validate_calendar_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
+# Limites reais das colunas do WordPress (wp_cn_tennis_tournaments):
+# `name` varchar(190) e `external_id` varchar(100). O lado PHP deriva o
+# external_id de `name:<slug>:<starts_at>`, então o nome também limita o
+# identificador. Publicar uma linha acima disso faz o wpdb recusar o INSERT —
+# foi o que aconteceu com a eliminatória da Davis Cup agregada em 2026.
+NAME_MAX = 190
+EXTERNAL_ID_MAX = 100
+
+
+def derived_external_id(name: str, starts_at: str) -> str:
+    """Mesmo identificador que CN_Tennis_Data_Normalizer::tournament_row()
+    monta no WordPress, para poder medir o tamanho aqui."""
+    slug = unicodedata.normalize("NFKD", name)
+    slug = "".join(ch for ch in slug if not unicodedata.combining(ch))
+    slug = re.sub(r"[^a-z0-9]+", "-", slug.lower()).strip("-")
+    return f"name:{slug}:{starts_at}"
+
+
+def calendar_row_too_long(row: dict[str, Any]) -> str | None:
+    """Motivo pelo qual a linha não cabe no banco, ou None se couber."""
+    name = (row.get("name") or "").strip()
+    starts_at = str(row.get("starts_at") or "")
+    if len(name) > NAME_MAX:
+        return f"name com {len(name)} caracteres (limite {NAME_MAX})"
+    external_id = derived_external_id(name, starts_at)
+    if len(external_id) > EXTERNAL_ID_MAX:
+        return f"external_id derivado com {len(external_id)} caracteres (limite {EXTERNAL_ID_MAX})"
+    return None
+
+
+def validate_calendar_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int, list[str]]:
+    """@return (linhas válidas, descartadas, motivos dos descartes por tamanho)"""
     valid = []
     discarded = 0
+    oversized: list[str] = []
     for row in rows:
         name = (row.get("name") or "").strip()
         starts_at = row.get("starts_at")
@@ -42,8 +76,13 @@ def validate_calendar_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, A
         if ends_at and not _is_valid_date(ends_at):
             discarded += 1
             continue
+        too_long = calendar_row_too_long(row)
+        if too_long:
+            discarded += 1
+            oversized.append(f"{name[:60]}...: {too_long}")
+            continue
         valid.append(row)
-    return valid, discarded
+    return valid, discarded, oversized
 
 
 def _is_valid_date(value: Any) -> bool:

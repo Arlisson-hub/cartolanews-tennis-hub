@@ -76,8 +76,14 @@ class _TableParser(HTMLParser):
     uma `<tr>` sempre pertence à tabela mais interna que estiver aberta.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, br_marker: str = " ") -> None:
         super().__init__(convert_charrefs=True)
+        # `br_marker` permite ao chamador PRESERVAR a quebra de linha da fonte.
+        # O padrao continua " " (comportamento historico: <br> virava espaco e a
+        # estrutura se perdia). O calendario pede um marcador nao-branco porque
+        # a Wikipedia usa <br> para separar sedes dentro de uma mesma celula, e
+        # sem isso 13 confrontos distintos chegam como um texto unico.
+        self._br_marker = br_marker
         self.tables: list[list[list[str]]] = []
         self._table_stack: list[list[list[str]]] = []
         self._current_row: list[str] = []
@@ -93,7 +99,7 @@ class _TableParser(HTMLParser):
             self._in_cell = True
             self._current_cell = []
         elif tag == "br" and self._in_cell:
-            self._current_cell.append(" ")
+            self._current_cell.append(self._br_marker)
         elif tag == "img" and self._in_cell:
             # Bandeiras de país costumam ser <img alt="Italy" ...> sem texto
             # visível — capturamos o alt para não perder o país da linha.
@@ -120,10 +126,16 @@ class _TableParser(HTMLParser):
             self._current_cell.append(data)
 
 
-def parse_html_tables(html: str) -> list[list[list[str]]]:
+def parse_html_tables(html: str, *, br_marker: str = " ") -> list[list[list[str]]]:
     """Retorna todas as tabelas de uma página como listas de linhas de
-    texto puro (sem HTML), na ordem em que aparecem no documento."""
-    parser = _TableParser()
+    texto puro (sem HTML), na ordem em que aparecem no documento.
+
+    `br_marker` troca o que um `<br>` deixa no lugar. O padrão é um espaço,
+    idêntico ao comportamento anterior; quem precisa da estrutura original da
+    célula passa um caractere não-branco (o calendário usa BR_MARKER), porque a
+    normalização final de cada célula colapsa qualquer espaço em branco.
+    """
+    parser = _TableParser(br_marker=br_marker)
     parser.feed(html)
     return parser.tables
 

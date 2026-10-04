@@ -32,6 +32,7 @@ from pathlib import Path
 import yaml
 
 from .providers import atp, commons, thesportsdb, wta
+from .parsers import wikipedia_tables
 from .parsers.wikipedia_tables import extract_calendar_rows
 from . import normalize, validate
 
@@ -108,7 +109,9 @@ def sync_calendar(config: dict, *, changed: dict[str, bool]) -> None:
         url = url_template.format(year=year)
         try:
             html = commons.fetch_text(url, timeout=cfg.get("timeout_seconds", 25), retries=cfg.get("retries", 3))
-            tables = commons.parse_html_tables(html)
+            # Preserva o <br> das células: é ele que separa as sedes de um
+            # confronto agregado (Davis Cup/Billie Jean King Cup).
+            tables = commons.parse_html_tables(html, br_marker=wikipedia_tables.BR_MARKER)
             found_any = False
             for table in tables:
                 rows = extract_calendar_rows(table, tour)
@@ -138,7 +141,9 @@ def sync_calendar(config: dict, *, changed: dict[str, bool]) -> None:
             row["starts_at"], row["ends_at"] = parsed
         normalized_rows.append({k: v for k, v in row.items() if k != "date_text"})
 
-    valid_rows, discarded = validate.validate_calendar_rows(normalized_rows)
+    valid_rows, discarded, oversized = validate.validate_calendar_rows(normalized_rows)
+    for motivo in oversized:
+        log(f"Calendário: linha descartada por não caber no banco — {motivo}", level="warning")
     if not valid_rows:
         log("Calendário: nenhuma linha válida coletada nesta execução; snapshot anterior preservado.", level="warning")
         return

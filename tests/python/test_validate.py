@@ -34,10 +34,11 @@ def test_validate_calendar_rows_requires_valid_iso_dates():
         {"name": "Bad End Date", "starts_at": "2099-02-02", "ends_at": "not-a-date"},
         {"name": "Open Ended Ok", "starts_at": "2099-02-02", "ends_at": None},
     ]
-    valid, discarded = validate.validate_calendar_rows(rows)
+    valid, discarded, oversized = validate.validate_calendar_rows(rows)
     names = [r["name"] for r in valid]
     assert names == ["Valid Tournament", "Open Ended Ok"]
     assert discarded == 4
+    assert oversized == []
 
 
 def test_discard_rate_acceptable_boundary():
