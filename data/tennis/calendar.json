@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-04T02:06:02.828700+00:00",
+  "generated_at": "2026-10-04T11:08:26.745159+00:00",
   "source": "Wikipédia — temporada ATP/WTA",
   "source_url": "https://en.wikipedia.org/wiki/2026_ATP_Tour",
-  "verified_at": "2026-10-04T02:06:02.828700+00:00",
+  "verified_at": "2026-10-04T11:08:26.745159+00:00",
   "data": [
     {
       "name": "United Cup Perth/Sydney, Australia United Cup Hard",
-      "tour": "atp",
+      "tour": "both",
       "category": "unitedcup",
       "surface": "hard",
       "city": "",
@@ -48,6 +48,15 @@
       "surface": "hard",
       "city": "",
       "starts_at": "2026-01-12",
+      "ends_at": null
+    },
+    {
+      "name": "Australian Open Melbourne, Australia Grand Slam Hard",
+      "tour": "both",
+      "category": "grand_slam",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-19",
       "ends_at": null
     },
     {
@@ -271,6 +280,24 @@
       "ends_at": null
     },
     {
+      "name": "Indian Wells Open Indian Wells, United States ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-03-02",
+      "ends_at": null
+    },
+    {
+      "name": "Miami Open Miami Gardens, United States ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-03-16",
+      "ends_at": null
+    },
+    {
       "name": "U.S. Men's Clay Court Championships Houston, United States ATP",
       "tour": "atp",
       "category": "atp250",
@@ -325,6 +352,51 @@
       "ends_at": null
     },
     {
+      "name": "Madrid Open Madrid, Spain ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-04-20",
+      "ends_at": null
+    },
+    {
+      "name": "Italian Open Rome, Italy ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-04",
+      "ends_at": null
+    },
+    {
+      "name": "Hamburg Open Hamburg, Germany ATP",
+      "tour": "atp",
+      "category": "atp500",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-18",
+      "ends_at": null
+    },
+    {
+      "name": "Geneva Open Geneva, Switzerland ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-18",
+      "ends_at": null
+    },
+    {
+      "name": "French Open Paris, France Grand Slam Clay (red)",
+      "tour": "atp",
+      "category": "grand_slam",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-25",
+      "ends_at": null
+    },
+    {
       "name": "Stuttgart Open Stuttgart, Germany ATP",
       "tour": "atp",
       "category": "atp250",
@@ -376,6 +448,15 @@
       "surface": "grass",
       "city": "",
       "starts_at": "2026-06-22",
+      "ends_at": null
+    },
+    {
+      "name": "Wimbledon London, United Kingdom Grand Slam Grass",
+      "tour": "both",
+      "category": "grand_slam",
+      "surface": "grass",
+      "city": "",
+      "starts_at": "2026-06-29",
       "ends_at": null
     },
     {
@@ -439,6 +520,42 @@
       "surface": "hard",
       "city": "",
       "starts_at": "2026-07-27",
+      "ends_at": null
+    },
+    {
+      "name": "Canadian Open Montreal, Canada ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-03",
+      "ends_at": null
+    },
+    {
+      "name": "Cincinnati Open Mason, United States ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-10",
+      "ends_at": null
+    },
+    {
+      "name": "Winston-Salem Open Winston-Salem, United States ATP",
+      "tour": "atp",
+      "category": "atp250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-24",
+      "ends_at": null
+    },
+    {
+      "name": "US Open New York City, United States Grand Slam Hard",
+      "tour": "atp",
+      "category": "grand_slam",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-31",
       "ends_at": null
     },
     {
@@ -557,6 +674,15 @@
       "ends_at": null
     },
     {
+      "name": "Shanghai Masters Shanghai, China ATP",
+      "tour": "atp",
+      "category": "atp1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-10-05",
+      "ends_at": null
+    },
+    {
       "name": "Almaty Open Almaty, Kazakhstan ATP",
       "tour": "atp",
       "category": "atp250",
@@ -638,6 +764,24 @@
       "ends_at": null
     },
     {
+      "name": "Brisbane International Brisbane, Australia WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-05",
+      "ends_at": null
+    },
+    {
+      "name": "Auckland Open Auckland, New Zealand WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-01-05",
+      "ends_at": null
+    },
+    {
       "name": "Adelaide International Adelaide, Australia WTA",
       "tour": "wta",
       "category": "wta500",
@@ -651,15 +795,6 @@
       "tour": "wta",
       "category": "wta250",
       "surface": "hard",
-      "city": "",
-      "starts_at": "2026-01-12",
-      "ends_at": null
-    },
-    {
-      "name": "Jan",
-      "tour": "wta",
-      "category": "",
-      "surface": "",
       "city": "",
       "starts_at": "2026-01-12",
       "ends_at": null
@@ -728,6 +863,42 @@
       "ends_at": null
     },
     {
+      "name": "Indian Wells Open Indian Wells, United States WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-03-02",
+      "ends_at": null
+    },
+    {
+      "name": "Miami Open Miami Gardens, United States WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-03-16",
+      "ends_at": null
+    },
+    {
+      "name": "Charleston Open Charleston, United States WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-03-30",
+      "ends_at": null
+    },
+    {
+      "name": "Copa Colsanitas Bogotá, Colombia WTA",
+      "tour": "wta",
+      "category": "wta250",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-03-30",
+      "ends_at": null
+    },
+    {
       "name": "Billie Jean King Cup qualifying round",
       "tour": "wta",
       "category": "",
@@ -764,12 +935,21 @@
       "ends_at": null
     },
     {
-      "name": "Apr",
+      "name": "Madrid Open Madrid, Spain WTA",
       "tour": "wta",
-      "category": "",
-      "surface": "",
+      "category": "wta1000",
+      "surface": "clay",
       "city": "",
-      "starts_at": "2026-04-13",
+      "starts_at": "2026-04-20",
+      "ends_at": null
+    },
+    {
+      "name": "Italian Open Rome, Italy WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "clay",
+      "city": "",
+      "starts_at": "2026-05-04",
       "ends_at": null
     },
     {
@@ -791,12 +971,12 @@
       "ends_at": null
     },
     {
-      "name": "May",
+      "name": "French Open Paris, France Grand Slam Clay",
       "tour": "wta",
-      "category": "",
-      "surface": "",
+      "category": "grand_slam",
+      "surface": "clay",
       "city": "",
-      "starts_at": "2026-05-18",
+      "starts_at": "2026-05-25",
       "ends_at": null
     },
     {
@@ -849,15 +1029,6 @@
       "tour": "wta",
       "category": "wta250",
       "surface": "grass",
-      "city": "",
-      "starts_at": "2026-06-21",
-      "ends_at": null
-    },
-    {
-      "name": "Jun",
-      "tour": "wta",
-      "category": "",
-      "surface": "",
       "city": "",
       "starts_at": "2026-06-21",
       "ends_at": null
@@ -917,6 +1088,42 @@
       "ends_at": null
     },
     {
+      "name": "Canadian Open Toronto, Canada WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-03",
+      "ends_at": null
+    },
+    {
+      "name": "Cincinnati Open Mason, United States WTA",
+      "tour": "wta",
+      "category": "wta1000",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-10",
+      "ends_at": null
+    },
+    {
+      "name": "Monterrey Open Monterrey, Mexico WTA",
+      "tour": "wta",
+      "category": "wta500",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-24",
+      "ends_at": null
+    },
+    {
+      "name": "US Open New York, United States Grand Slam Hard",
+      "tour": "wta",
+      "category": "grand_slam",
+      "surface": "hard",
+      "city": "",
+      "starts_at": "2026-08-31",
+      "ends_at": null
+    },
+    {
       "name": "Guadalajara Open Guadalajara, Mexico WTA",
       "tour": "wta",
       "category": "wta500",
@@ -962,12 +1169,12 @@
       "ends_at": null
     },
     {
-      "name": "Sep",
+      "name": "China Open Beijing, China WTA",
       "tour": "wta",
-      "category": "",
-      "surface": "",
+      "category": "wta1000",
+      "surface": "hard",
       "city": "",
-      "starts_at": "2026-09-21",
+      "starts_at": "2026-09-28",
       "ends_at": null
     },
     {
