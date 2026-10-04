@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-20T14:16:20.986050+00:00",
+  "generated_at": "2026-10-04T02:06:02.828700+00:00",
   "source": "Wikipédia — temporada ATP/WTA",
   "source_url": "https://en.wikipedia.org/wiki/2026_ATP_Tour",
-  "verified_at": "2026-09-20T14:16:20.986050+00:00",
+  "verified_at": "2026-10-04T02:06:02.828700+00:00",
   "data": [
     {
       "name": "United Cup Perth/Sydney, Australia United Cup Hard",
@@ -51,11 +51,132 @@
       "ends_at": null
     },
     {
-      "name": "Davis Cup Qualifiers first round Düsseldorf, Germany – hard (i) Quito, Ecuador – clay Plovdiv, Bulgaria – clay Bengaluru, India – hard Tatabánya, Hungary – clay (i) Le Portel, France – hard (i) Vancouver, Canada – hard (i) Jihlava, Czech Republic – hard (i) Busan, South Korea – hard (i) Tokyo, Japan – hard (i) Oslo, Norway – hard (i) Varaždin, Croatia – hard (i) Santiago, Chile – clay",
+      "name": "Davis Cup Qualifiers first round Düsseldorf, Germany",
       "tour": "atp",
       "category": "",
       "surface": "indoor",
-      "city": "",
+      "city": "Düsseldorf",
+      "country": "Germany",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Quito, Ecuador",
+      "tour": "atp",
+      "category": "",
+      "surface": "clay",
+      "city": "Quito",
+      "country": "Ecuador",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Plovdiv, Bulgaria",
+      "tour": "atp",
+      "category": "",
+      "surface": "clay",
+      "city": "Plovdiv",
+      "country": "Bulgaria",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Bengaluru, India",
+      "tour": "atp",
+      "category": "",
+      "surface": "hard",
+      "city": "Bengaluru",
+      "country": "India",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Tatabánya, Hungary",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Tatabánya",
+      "country": "Hungary",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Le Portel, France",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Le Portel",
+      "country": "France",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Vancouver, Canada",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Vancouver",
+      "country": "Canada",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Jihlava, Czech Republic",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Jihlava",
+      "country": "Czech Republic",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Busan, South Korea",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Busan",
+      "country": "South Korea",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Tokyo, Japan",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Tokyo",
+      "country": "Japan",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Oslo, Norway",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Oslo",
+      "country": "Norway",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Varaždin, Croatia",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Varaždin",
+      "country": "Croatia",
+      "starts_at": "2026-02-02",
+      "ends_at": null
+    },
+    {
+      "name": "Davis Cup Qualifiers first round Santiago, Chile",
+      "tour": "atp",
+      "category": "",
+      "surface": "clay",
+      "city": "Santiago",
+      "country": "Chile",
       "starts_at": "2026-02-02",
       "ends_at": null
     },
@@ -318,6 +439,76 @@
       "surface": "hard",
       "city": "",
       "starts_at": "2026-07-27",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round Santiago, Chile",
+      "tour": "atp",
+      "category": "",
+      "surface": "clay",
+      "city": "Santiago",
+      "country": "Chile",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round Halle, Germany",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Halle",
+      "country": "Germany",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round London, United Kingdom",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "London",
+      "country": "United Kingdom",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round Vienna, Austria",
+      "tour": "atp",
+      "category": "",
+      "surface": "clay",
+      "city": "Vienna",
+      "country": "Austria",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round Seoul, South Korea",
+      "tour": "atp",
+      "category": "",
+      "surface": "hard",
+      "city": "Seoul",
+      "country": "South Korea",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round Prague, Czech Republic",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Prague",
+      "country": "Czech Republic",
+      "starts_at": "2026-09-14",
+      "ends_at": null
+    },
+    {
+      "name": "2026 Davis Cup Qualifiers second round Quebec City, Canada",
+      "tour": "atp",
+      "category": "",
+      "surface": "indoor",
+      "city": "Quebec City",
+      "country": "Canada",
+      "starts_at": "2026-09-14",
       "ends_at": null
     },
     {
