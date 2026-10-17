@@ -40,6 +40,9 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    # Medido em 30 dias: mediana 9 s, p90 12 s; uma execucao presa chegou a 15 min.
+    # Repositorio publico (nao cobra minutos), mas sem teto o padrao e 6 h.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
