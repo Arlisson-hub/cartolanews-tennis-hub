@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-12T15:29:16.372274+00:00",
+  "generated_at": "2026-10-19T13:19:54.902864+00:00",
   "source": "WTA Tennis — Official Rankings (wtatennis.com)",
   "source_url": "https://www.wtatennis.com/rankings/singles",
-  "verified_at": "2026-10-12T15:29:16.372274+00:00",
+  "verified_at": "2026-10-19T13:19:54.902864+00:00",
   "data": [
     {
       "rank": 1,
       "name": "Elena Rybakina",
       "country_code": "KAZ",
-      "points": 9696,
+      "points": 9196,
       "previous_rank": null,
       "tournaments_played": 20
     },
@@ -19,294 +19,294 @@
       "country_code": "BLR",
       "points": 7550,
       "previous_rank": null,
-      "tournaments_played": 19
+      "tournaments_played": 20
     },
     {
       "rank": 3,
       "name": "Mirra Andreeva",
       "country_code": "RUS",
-      "points": 6371,
-      "previous_rank": 5,
+      "points": 6306,
+      "previous_rank": null,
       "tournaments_played": 20
     },
     {
       "rank": 4,
       "name": "Jessica Pegula",
       "country_code": "USA",
-      "points": 6225,
-      "previous_rank": 3,
-      "tournaments_played": 18
+      "points": 6235,
+      "previous_rank": null,
+      "tournaments_played": 19
     },
     {
       "rank": 5,
       "name": "Coco Gauff",
       "country_code": "USA",
       "points": 5974,
-      "previous_rank": 4,
-      "tournaments_played": 18
+      "previous_rank": null,
+      "tournaments_played": 19
     },
     {
       "rank": 6,
       "name": "Elina Svitolina",
       "country_code": "UKR",
-      "points": 5024,
-      "previous_rank": 7,
-      "tournaments_played": 18
+      "points": 5229,
+      "previous_rank": null,
+      "tournaments_played": 19
     },
     {
       "rank": 7,
       "name": "Karolina Muchova",
       "country_code": "CZE",
-      "points": 4773,
-      "previous_rank": 8,
+      "points": 4833,
+      "previous_rank": null,
       "tournaments_played": 19
     },
     {
       "rank": 8,
       "name": "Linda Noskova",
       "country_code": "CZE",
-      "points": 4679,
-      "previous_rank": 6,
+      "points": 4678,
+      "previous_rank": null,
       "tournaments_played": 19
     },
     {
       "rank": 9,
       "name": "Iga Swiatek",
       "country_code": "POL",
-      "points": 3999,
+      "points": 4389,
       "previous_rank": null,
-      "tournaments_played": 18
+      "tournaments_played": 19
     },
     {
       "rank": 10,
       "name": "Marta Kostyuk",
       "country_code": "UKR",
-      "points": 3910,
+      "points": 3920,
       "previous_rank": null,
-      "tournaments_played": 17
+      "tournaments_played": 18
     },
     {
       "rank": 11,
-      "name": "Iva Jovic",
-      "country_code": "USA",
-      "points": 2860,
-      "previous_rank": 13,
-      "tournaments_played": 21
+      "name": "Maja Chwalinska",
+      "country_code": "POL",
+      "points": 3031,
+      "previous_rank": 22,
+      "tournaments_played": 22
     },
     {
       "rank": 12,
-      "name": "Belinda Bencic",
-      "country_code": "SUI",
-      "points": 2760,
-      "previous_rank": null,
-      "tournaments_played": 18
+      "name": "Iva Jovic",
+      "country_code": "USA",
+      "points": 2931,
+      "previous_rank": 11,
+      "tournaments_played": 22
     },
     {
       "rank": 13,
       "name": "Diana Shnaider",
       "country_code": "RUS",
-      "points": 2643,
-      "previous_rank": 14,
+      "points": 2663,
+      "previous_rank": null,
       "tournaments_played": 22
     },
     {
       "rank": 14,
-      "name": "Elise Mertens",
-      "country_code": "BEL",
-      "points": 2540,
-      "previous_rank": 19,
-      "tournaments_played": 21
-    },
-    {
-      "rank": 15,
-      "name": "Victoria Mboko",
-      "country_code": "CAN",
-      "points": 2502,
-      "previous_rank": null,
-      "tournaments_played": 17
-    },
-    {
-      "rank": 16,
-      "name": "Sorana Cirstea",
-      "country_code": "ROU",
-      "points": 2424,
-      "previous_rank": null,
-      "tournaments_played": 21
-    },
-    {
-      "rank": 17,
-      "name": "Amanda Anisimova",
-      "country_code": "USA",
-      "points": 2363,
-      "previous_rank": 11,
-      "tournaments_played": 14
-    },
-    {
-      "rank": 18,
-      "name": "Naomi Osaka",
-      "country_code": "JPN",
-      "points": 2351,
-      "previous_rank": 17,
+      "name": "Belinda Bencic",
+      "country_code": "SUI",
+      "points": 2662,
+      "previous_rank": 12,
       "tournaments_played": 18
     },
     {
+      "rank": 15,
+      "name": "Elise Mertens",
+      "country_code": "BEL",
+      "points": 2540,
+      "previous_rank": 14,
+      "tournaments_played": 21
+    },
+    {
+      "rank": 16,
+      "name": "Victoria Mboko",
+      "country_code": "CAN",
+      "points": 2501,
+      "previous_rank": 15,
+      "tournaments_played": 16
+    },
+    {
+      "rank": 17,
+      "name": "Sorana Cirstea",
+      "country_code": "ROU",
+      "points": 2380,
+      "previous_rank": 16,
+      "tournaments_played": 21
+    },
+    {
+      "rank": 18,
+      "name": "Amanda Anisimova",
+      "country_code": "USA",
+      "points": 2363,
+      "previous_rank": 17,
+      "tournaments_played": 15
+    },
+    {
       "rank": 19,
-      "name": "Alexandra Eala",
-      "country_code": "PHI",
-      "points": 2241,
+      "name": "Naomi Osaka",
+      "country_code": "JPN",
+      "points": 2297,
       "previous_rank": 18,
-      "tournaments_played": 28
+      "tournaments_played": 18
     },
     {
       "rank": 20,
-      "name": "Madison Keys",
-      "country_code": "USA",
-      "points": 2110,
-      "previous_rank": 23,
-      "tournaments_played": 20
+      "name": "Alexandra Eala",
+      "country_code": "PHI",
+      "points": 2241,
+      "previous_rank": 19,
+      "tournaments_played": 28
     },
     {
       "rank": 21,
-      "name": "Anna Kalinskaya",
-      "country_code": "RUS",
-      "points": 2043,
-      "previous_rank": 22,
+      "name": "Madison Keys",
+      "country_code": "USA",
+      "points": 2029,
+      "previous_rank": 20,
       "tournaments_played": 21
     },
     {
       "rank": 22,
-      "name": "Maja Chwalinska",
-      "country_code": "POL",
-      "points": 2043,
-      "previous_rank": 21,
-      "tournaments_played": 21
-    },
-    {
-      "rank": 23,
       "name": "Qinwen Zheng",
       "country_code": "CHN",
       "points": 2018,
-      "previous_rank": 54,
-      "tournaments_played": 17
+      "previous_rank": 23,
+      "tournaments_played": 18
+    },
+    {
+      "rank": 23,
+      "name": "Anna Kalinskaya",
+      "country_code": "RUS",
+      "points": 1989,
+      "previous_rank": 21,
+      "tournaments_played": 22
     },
     {
       "rank": 24,
-      "name": "Ekaterina Alexandrova",
-      "country_code": "RUS",
-      "points": 1906,
-      "previous_rank": 28,
-      "tournaments_played": 26
+      "name": "Jelena Ostapenko",
+      "country_code": "LAT",
+      "points": 1916,
+      "previous_rank": 34,
+      "tournaments_played": 21
     },
     {
       "rank": 25,
-      "name": "Leylah Fernandez",
-      "country_code": "CAN",
-      "points": 1839,
-      "previous_rank": 26,
-      "tournaments_played": 28
+      "name": "Ann Li",
+      "country_code": "USA",
+      "points": 1833,
+      "previous_rank": 31,
+      "tournaments_played": 27
     },
     {
       "rank": 26,
-      "name": "Anastasia Potapova",
-      "country_code": "AUT",
-      "points": 1816,
-      "previous_rank": 25,
-      "tournaments_played": 20
+      "name": "Marie Bouzkova",
+      "country_code": "CZE",
+      "points": 1818,
+      "previous_rank": 28,
+      "tournaments_played": 23
     },
     {
       "rank": 27,
-      "name": "Emma Navarro",
-      "country_code": "USA",
-      "points": 1809,
-      "previous_rank": 24,
-      "tournaments_played": 24
+      "name": "Anastasia Potapova",
+      "country_code": "AUT",
+      "points": 1814,
+      "previous_rank": 26,
+      "tournaments_played": 21
     },
     {
       "rank": 28,
-      "name": "Marie Bouzkova",
-      "country_code": "CZE",
-      "points": 1763,
+      "name": "Emma Navarro",
+      "country_code": "USA",
+      "points": 1794,
       "previous_rank": 27,
-      "tournaments_played": 23
+      "tournaments_played": 25
     },
     {
       "rank": 29,
       "name": "Nikola Bartunkova",
       "country_code": "CZE",
-      "points": 1661,
-      "previous_rank": 34,
-      "tournaments_played": 22
+      "points": 1711,
+      "previous_rank": null,
+      "tournaments_played": 23
     },
     {
       "rank": 30,
-      "name": "Sara Bejlek",
-      "country_code": "CZE",
-      "points": 1650,
-      "previous_rank": 29,
-      "tournaments_played": 24
+      "name": "Leylah Fernandez",
+      "country_code": "CAN",
+      "points": 1709,
+      "previous_rank": 25,
+      "tournaments_played": 28
     },
     {
       "rank": 31,
-      "name": "Ann Li",
-      "country_code": "USA",
-      "points": 1648,
-      "previous_rank": 30,
-      "tournaments_played": 27
+      "name": "Maria Sakkari",
+      "country_code": "GRE",
+      "points": 1706,
+      "previous_rank": 35,
+      "tournaments_played": 23
     },
     {
       "rank": 32,
-      "name": "Diane Parry",
-      "country_code": "FRA",
-      "points": 1541,
-      "previous_rank": 31,
-      "tournaments_played": 26
+      "name": "Sara Bejlek",
+      "country_code": "CZE",
+      "points": 1650,
+      "previous_rank": 30,
+      "tournaments_played": 25
     },
     {
       "rank": 33,
-      "name": "Jasmine Paolini",
-      "country_code": "ITA",
-      "points": 1528,
-      "previous_rank": 20,
-      "tournaments_played": 19
+      "name": "Ekaterina Alexandrova",
+      "country_code": "RUS",
+      "points": 1591,
+      "previous_rank": 24,
+      "tournaments_played": 26
     },
     {
       "rank": 34,
-      "name": "Jelena Ostapenko",
-      "country_code": "LAT",
-      "points": 1527,
+      "name": "Diane Parry",
+      "country_code": "FRA",
+      "points": 1549,
       "previous_rank": 32,
-      "tournaments_played": 20
+      "tournaments_played": 27
     },
     {
       "rank": 35,
-      "name": "Maria Sakkari",
-      "country_code": "GRE",
-      "points": 1492,
+      "name": "Jasmine Paolini",
+      "country_code": "ITA",
+      "points": 1453,
       "previous_rank": 33,
-      "tournaments_played": 23
+      "tournaments_played": 19
     },
     {
       "rank": 36,
       "name": "Donna Vekic",
       "country_code": "CRO",
-      "points": 1325,
-      "previous_rank": 40,
-      "tournaments_played": 23
+      "points": 1333,
+      "previous_rank": null,
+      "tournaments_played": 24
     },
     {
       "rank": 37,
       "name": "Peyton Stearns",
       "country_code": "USA",
       "points": 1316,
-      "previous_rank": 36,
-      "tournaments_played": 22
+      "previous_rank": null,
+      "tournaments_played": 23
     },
     {
       "rank": 38,
       "name": "Cristina Bucsa",
       "country_code": "ESP",
       "points": 1294,
-      "previous_rank": 35,
+      "previous_rank": null,
       "tournaments_played": 24
     },
     {
@@ -314,96 +314,96 @@
       "name": "Xinyu Wang",
       "country_code": "CHN",
       "points": 1288,
-      "previous_rank": 38,
+      "previous_rank": null,
       "tournaments_played": 25
     },
     {
       "rank": 40,
-      "name": "Kimberly Birrell",
-      "country_code": "AUS",
+      "name": "Daria Snigur",
+      "country_code": "UKR",
       "points": 1280,
-      "previous_rank": 41,
-      "tournaments_played": 28
+      "previous_rank": 42,
+      "tournaments_played": 24
     },
     {
       "rank": 41,
-      "name": "Talia Gibson",
+      "name": "Kimberly Birrell",
       "country_code": "AUS",
-      "points": 1273,
-      "previous_rank": 37,
-      "tournaments_played": 31
+      "points": 1280,
+      "previous_rank": 40,
+      "tournaments_played": 28
     },
     {
       "rank": 42,
-      "name": "Daria Snigur",
-      "country_code": "UKR",
-      "points": 1254,
-      "previous_rank": 46,
-      "tournaments_played": 24
+      "name": "Talia Gibson",
+      "country_code": "AUS",
+      "points": 1273,
+      "previous_rank": 41,
+      "tournaments_played": 31
     },
     {
       "rank": 43,
       "name": "Liudmila Samsonova",
       "country_code": "RUS",
-      "points": 1229,
-      "previous_rank": 39,
+      "points": 1234,
+      "previous_rank": null,
       "tournaments_played": 25
     },
     {
       "rank": 44,
-      "name": "Yuliia Starodubtseva",
-      "country_code": "UKR",
-      "points": 1165,
+      "name": "Hailey Baptiste",
+      "country_code": "USA",
+      "points": 1154,
       "previous_rank": 45,
-      "tournaments_played": 29
+      "tournaments_played": 15
     },
     {
       "rank": 45,
-      "name": "Hailey Baptiste",
-      "country_code": "USA",
-      "points": 1155,
-      "previous_rank": 42,
-      "tournaments_played": 16
+      "name": "Barbora Krejcikova",
+      "country_code": "CZE",
+      "points": 1133,
+      "previous_rank": 46,
+      "tournaments_played": 20
     },
     {
       "rank": 46,
-      "name": "Barbora Krejcikova",
-      "country_code": "CZE",
-      "points": 1134,
-      "previous_rank": 43,
-      "tournaments_played": 19
-    },
-    {
-      "rank": 47,
       "name": "Janice Tjen",
       "country_code": "INA",
-      "points": 1125,
-      "previous_rank": 49,
+      "points": 1120,
+      "previous_rank": 47,
       "tournaments_played": 29
     },
     {
-      "rank": 48,
-      "name": "Anhelina Kalinina",
-      "country_code": "UKR",
-      "points": 1107,
-      "previous_rank": 50,
+      "rank": 47,
+      "name": "Magdalena Frech",
+      "country_code": "POL",
+      "points": 1110,
+      "previous_rank": 56,
       "tournaments_played": 23
     },
     {
-      "rank": 49,
+      "rank": 48,
       "name": "Karolina Pliskova",
       "country_code": "CZE",
       "points": 1105,
-      "previous_rank": 51,
-      "tournaments_played": 14
+      "previous_rank": 49,
+      "tournaments_played": 15
+    },
+    {
+      "rank": 49,
+      "name": "Sonay Kartal",
+      "country_code": "GBR",
+      "points": 1097,
+      "previous_rank": 170,
+      "tournaments_played": 11
     },
     {
       "rank": 50,
-      "name": "Tamara Korpatsch",
-      "country_code": "GER",
-      "points": 1086,
-      "previous_rank": 53,
-      "tournaments_played": 33
+      "name": "Yuliia Starodubtseva",
+      "country_code": "UKR",
+      "points": 1090,
+      "previous_rank": 44,
+      "tournaments_played": 29
     }
   ]
 }
