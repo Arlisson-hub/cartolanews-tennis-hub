@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-07T17:27:47.627544+00:00",
+  "generated_at": "2026-11-21T23:28:17.023598+00:00",
   "source": "Wikipédia — temporada ATP/WTA",
   "source_url": "https://en.wikipedia.org/wiki/2026_ATP_Tour",
-  "verified_at": "2026-10-07T17:27:47.627544+00:00",
+  "verified_at": "2026-11-21T23:28:17.023598+00:00",
   "data": [
     {
       "name": "United Cup Perth/Sydney, Australia United Cup Hard",
@@ -1250,7 +1250,7 @@
       "ends_at": null
     },
     {
-      "name": "Billie Jean King Cup playoffs",
+      "name": "Billie Jean King Cup play-offs",
       "tour": "wta",
       "category": "",
       "surface": "",
