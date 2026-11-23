@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-16T15:50:01.373011+00:00",
+  "generated_at": "2026-11-23T18:12:45.719860+00:00",
   "source": "WTA Tennis — Official Rankings (wtatennis.com)",
   "source_url": "https://www.wtatennis.com/rankings/singles",
-  "verified_at": "2026-11-16T15:50:01.373011+00:00",
+  "verified_at": "2026-11-23T18:12:45.719860+00:00",
   "data": [
     {
       "rank": 1,
@@ -18,7 +18,7 @@
       "name": "Mirra Andreeva",
       "country_code": "RUS",
       "points": 7806,
-      "previous_rank": 3,
+      "previous_rank": null,
       "tournaments_played": 21
     },
     {
@@ -26,7 +26,7 @@
       "name": "Aryna Sabalenka",
       "country_code": "BLR",
       "points": 6685,
-      "previous_rank": 2,
+      "previous_rank": null,
       "tournaments_played": 21
     },
     {
@@ -58,7 +58,7 @@
       "name": "Linda Noskova",
       "country_code": "CZE",
       "points": 4743,
-      "previous_rank": 8,
+      "previous_rank": null,
       "tournaments_played": 21
     },
     {
@@ -66,7 +66,7 @@
       "name": "Karolina Muchova",
       "country_code": "CZE",
       "points": 4665,
-      "previous_rank": 7,
+      "previous_rank": null,
       "tournaments_played": 20
     },
     {
@@ -97,9 +97,9 @@
       "rank": 12,
       "name": "Maja Chwalinska",
       "country_code": "POL",
-      "points": 3016,
+      "points": 3004,
       "previous_rank": null,
-      "tournaments_played": 23
+      "tournaments_played": 22
     },
     {
       "rank": 13,
@@ -287,19 +287,19 @@
     },
     {
       "rank": 36,
-      "name": "Talia Gibson",
-      "country_code": "AUS",
-      "points": 1342,
-      "previous_rank": null,
-      "tournaments_played": 32
-    },
-    {
-      "rank": 37,
       "name": "Peyton Stearns",
       "country_code": "USA",
       "points": 1316,
-      "previous_rank": null,
+      "previous_rank": 37,
       "tournaments_played": 24
+    },
+    {
+      "rank": 37,
+      "name": "Talia Gibson",
+      "country_code": "AUS",
+      "points": 1296,
+      "previous_rank": 36,
+      "tournaments_played": 31
     },
     {
       "rank": 38,
@@ -339,7 +339,7 @@
       "country_code": "UKR",
       "points": 1223,
       "previous_rank": null,
-      "tournaments_played": 24
+      "tournaments_played": 23
     },
     {
       "rank": 43,
@@ -375,19 +375,19 @@
     },
     {
       "rank": 47,
-      "name": "Kimberly Birrell",
-      "country_code": "AUS",
-      "points": 1146,
-      "previous_rank": null,
-      "tournaments_played": 27
-    },
-    {
-      "rank": 48,
       "name": "Katerina Siniakova",
       "country_code": "CZE",
       "points": 1143,
-      "previous_rank": null,
+      "previous_rank": 48,
       "tournaments_played": 20
+    },
+    {
+      "rank": 48,
+      "name": "Kimberly Birrell",
+      "country_code": "AUS",
+      "points": 1137,
+      "previous_rank": 47,
+      "tournaments_played": 26
     },
     {
       "rank": 49,
